@@ -1,0 +1,638 @@
+<exportedData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="commander.xsd" version="61" buildLabel="build_4.2_77824_2014.09.27_02:09:10" buildVersion="4.2.6.77824" passkey="a30cbf89cfdae202c5227ce40fe867512295566d">
+  <exportPath>/projects/EC-Zendesk</exportPath>
+  <project>
+    <projectName>EC-Zendesk</projectName>
+    <description>Plugin to interact with Zendesk
+Developped for the Citrix Hackathon</description>
+    <resourceName />
+    <workspaceName />
+    <propertySheet>
+      <property>
+        <propertyName>ec_tags</propertyName>
+        <expandable>1</expandable>
+        <value> ec github </value>
+      </property>
+      <property>
+        <propertyName>ec_visibility</propertyName>
+        <expandable>1</expandable>
+        <value>pickListOnly</value>
+      </property>
+      <property>
+        <propertyName>help</propertyName>
+        <description />
+        <expandable>1</expandable>
+        <value>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml">
+&lt;head>
+    &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
+    &lt;title>EC-Zendesk Plugin&lt;/title>
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.1/pluginhelp.css" type="text/css" media= "screen" />
+&lt;/head>
+
+&lt;body>
+    &lt;div class="help">
+        &lt;h1>EC-Zendesk&lt;/h1>
+&lt;p>Plugin Version 1.0.0.1&lt;/p>
+        &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
+
+        &lt;p>EC-Zendesk is a collection of procedures to help you
+interact with Zendesk.&lt;/p>
+
+&lt;/body>
+&lt;/html></value>
+      </property>
+      <property>
+        <propertyName>pluginBuildNumber</propertyName>
+        <expandable>1</expandable>
+        <value>1</value>
+      </property>
+      <property>
+        <propertyName>version</propertyName>
+        <description>Version of the EC-Zendesk project
+
+History:
+- version 1.0.0 initial version created for the Citrix hackathon
+</description>
+        <expandable>1</expandable>
+        <value>1.0.0</value>
+      </property>
+    <property><propertyName>ec_setup</propertyName><value># Data that drives the create step picker registration for this plugin.
+my %commentOnTicket = ( 
+  label       => "EC-Zendesk - commentOnTicket", 
+  procedure   => "commentOnTicket", 
+  description => "Comment on an existing  Zendesk Ticket", 
+  category    => "Administration" 
+);
+
+my %createTicket = ( 
+  label       => "EC-Zendesk - createTicket", 
+  procedure   => "createTicket", 
+  description => "Create a Zendesk Ticket", 
+  category    => "Administration" 
+);
+
+@::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.1</value></property></propertySheet>
+    <credential>
+      <credentialName>zendesk</credentialName>
+      <description />
+      <password>dXEbz0wIkXRx9eyRmQrAsGuLHqMlzTYDNgnyBHmjh9xLIhMNgbfETFRMdLeXRsNH</password>
+      <userName>ecsupport@electric-cloud.com</userName>
+      <propertySheet>
+      </propertySheet>
+    </credential>
+    <procedure>
+      <procedureName>commentOnTicket</procedureName>
+      <description>Comment on an existing  Zendesk Ticket</description>
+      <jobNameTemplate />
+      <resourceName />
+      <timeLimit />
+      <timeLimitUnits>minutes</timeLimitUnits>
+      <workspaceName />
+      <propertySheet>
+        <property>
+          <propertyName>ec_customEditorData</propertyName>
+          <propertySheet>
+            <property>
+              <propertyName>parameters</propertyName>
+              <propertySheet>
+                <property>
+                  <propertyName>Title</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>comment</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>product</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>options</propertyName>
+                      <propertySheet>
+                        <property>
+                          <propertyName>option1</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>ElectricCommander</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>electriccommander</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        <property>
+                          <propertyName>option2</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>ElectricFlow</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>electricflow</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        <property>
+                          <propertyName>list</propertyName>
+                          <expandable>1</expandable>
+                          <value>ElectricCommander|ElectricFlow</value>
+                        </property>
+                        <property>
+                          <propertyName>optionCount</propertyName>
+                          <expandable>1</expandable>
+                          <value>2</value>
+                        </property>
+                        <property>
+                          <propertyName>type</propertyName>
+                          <expandable>1</expandable>
+                          <value>list</value>
+                        </property>
+                      </propertySheet>
+                    </property>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketBody</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketDescription</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketNumber</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketSubject</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>zendeskURL</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+              </propertySheet>
+            </property>
+          </propertySheet>
+        </property>
+        <property>
+          <propertyName>exposeToPlugin</propertyName>
+          <description />
+          <expandable>1</expandable>
+          <value>1</value>
+        </property>
+      </propertySheet>
+      <formalParameter>
+        <formalParameterName>comment</formalParameterName>
+        <defaultValue />
+        <description>The comment you want to add to the ticket</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>ticketNumber</formalParameterName>
+        <defaultValue />
+        <description>The Zendesk ticket number to add a comment on</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>zendeskURL</formalParameterName>
+        <defaultValue>https://electriccloud.zendesk.com/api/v2</defaultValue>
+        <description />
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <step>
+        <stepName>commentTicket</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>#############################################################################
+#
+# Copyright Electric-Cloud 2015
+#
+#############################################################################
+$[/plugins[EC-Admin]project/scripts/perlHeaderJSON]
+
+use LWP::UserAgent;
+use HTTP::Request::Common;
+use JSON;
+use MIME::Base64;
+
+#############################################################################
+#
+# Parameters
+#
+#############################################################################
+my $creds = "zendesk";
+my $comment = "$[comment]";
+my $URL   = "$[zendeskURL]/tickets/$[ticketNumber].json";
+
+#############################################################################
+#
+# Global Variables
+#
+#############################################################################
+my $DEBUG=0;
+
+# Retrieve login and password from the credential
+my $username= $ec->getFullCredential($creds, {value => "password"})->{responses}->[0]->{credential}->{userName}; 
+my $password= $ec->getFullCredential($creds, {value => "userName"})->{responses}->[0]->{credential}->{password};
+
+# Package the data in a data structure matching the expected JSON
+my %data =(
+	ticket => {
+        comment => {
+			public => "true",
+        	body => $comment
+        },
+    },
+);
+
+# Encode the data structure to JSON
+my $data = encode_json(\%data);
+
+#
+# Create request
+#
+# Note: the current version of the LWP::UserAGent package does not support the put method
+#       therefore we have to use the POST metod from the HTTP::Request::Common package
+#       However this package seems to have issue with put request containing data so the trick
+#       is to create a POST request with the data and then chenge it to PUT
+
+#my $req = PUT $URL, Content => $data; #;
+my $req = POST($URL, 'Content-Type' => 'application/json', 'Content' => $data);
+printf("Req: %s\n", $req->as_string);
+
+$req->authorization_basic($username, $password);
+$req->method('PUT');
+
+# Create a user agent and make the request
+my $ua = LWP::UserAgent->new(ssl_opts =>{ verify_hostname => 0 });
+
+my $response = $ua->request($req);
+
+# Check for HTTP error codes
+die 'http status: ' . $response->code . '  ' . $response->message
+    unless ($response->is_success);
+
+# Decode the JSON into a Perl data structure
+my $response = decode_json($response->content);
+print Dumper($response);
+
+
+</command>
+        <condition />
+        <description />
+        <errorHandling>failProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <logFileName />
+        <parallel>0</parallel>
+        <postProcessor />
+        <precondition />
+        <releaseMode>none</releaseMode>
+        <resourceName />
+        <shell>ec-perl</shell>
+        <timeLimit />
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <workingDirectory />
+        <workspaceName />
+        <propertySheet>
+        </propertySheet>
+        <attachedCredentials>
+          <credentialName>zendesk</credentialName>
+        </attachedCredentials>
+      </step>
+    </procedure>
+    <procedure>
+      <procedureName>createTicket</procedureName>
+      <description>Create a Zendesk Ticket</description>
+      <jobNameTemplate />
+      <resourceName />
+      <timeLimit />
+      <timeLimitUnits>minutes</timeLimitUnits>
+      <workspaceName />
+      <propertySheet>
+        <property>
+          <propertyName>ec_customEditorData</propertyName>
+          <propertySheet>
+            <property>
+              <propertyName>parameters</propertyName>
+              <propertySheet>
+                <property>
+                  <propertyName>Title</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>product</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>options</propertyName>
+                      <propertySheet>
+                        <property>
+                          <propertyName>option1</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>ElectricCommander</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>electriccommander</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        <property>
+                          <propertyName>option2</propertyName>
+                          <propertySheet>
+                            <property>
+                              <propertyName>text</propertyName>
+                              <expandable>1</expandable>
+                              <value>ElectricFlow</value>
+                            </property>
+                            <property>
+                              <propertyName>value</propertyName>
+                              <expandable>1</expandable>
+                              <value>electricflow</value>
+                            </property>
+                          </propertySheet>
+                        </property>
+                        <property>
+                          <propertyName>list</propertyName>
+                          <expandable>1</expandable>
+                          <value>ElectricCommander|ElectricFlow</value>
+                        </property>
+                        <property>
+                          <propertyName>optionCount</propertyName>
+                          <expandable>1</expandable>
+                          <value>2</value>
+                        </property>
+                        <property>
+                          <propertyName>type</propertyName>
+                          <expandable>1</expandable>
+                          <value>list</value>
+                        </property>
+                      </propertySheet>
+                    </property>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketBody</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketDescription</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>ticketSubject</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>zendeskURL</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+              </propertySheet>
+            </property>
+          </propertySheet>
+        </property>
+        <property>
+          <propertyName>exposeToPlugin</propertyName>
+          <description />
+          <expandable>1</expandable>
+          <value>1</value>
+        </property>
+      </propertySheet>
+      <formalParameter>
+        <formalParameterName>product</formalParameterName>
+        <defaultValue>electriccommander</defaultValue>
+        <description />
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>select</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>ticketDescription</formalParameterName>
+        <defaultValue>This ticket has been created automatically by $[/myProject/projectName]:$[/myProcedure/procedureName]</defaultValue>
+        <description>The full description of the ticket</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>textarea</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>ticketSubject</formalParameterName>
+        <defaultValue>TEST ignore - $[/increment /server/counters/$[/myProject/projectName]/jobCounter]</defaultValue>
+        <description />
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>zendeskURL</formalParameterName>
+        <defaultValue>https://electriccloud.zendesk.com/api/v2</defaultValue>
+        <description />
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <step>
+        <stepName>openTicket</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>#############################################################################
+#
+# Copyright Electric-Cloud 2015
+#
+#############################################################################
+$[/plugins[EC-Admin]project/scripts/perlHeaderJSON]
+
+use LWP::UserAgent;
+use JSON;
+use MIME::Base64;
+
+#############################################################################
+#
+# Parameters
+#
+#############################################################################
+my $creds = "zendesk";
+my $title = "$[ticketSubject]";
+my $body  = "$[ticketDescription]";
+my $URL   = "$[zendeskURL]/tickets.json";
+my $product="$[product]";
+
+#############################################################################
+#
+# Global Variables
+#
+#############################################################################
+# my $DEBUG=1;
+
+
+# Retrieve login and password from the credential
+my $username= $ec->getFullCredential($creds, {value => "password"})->{responses}->[0]->{credential}->{userName}; 
+my $password= $ec->getFullCredential($creds, {value => "userName"})->{responses}->[0]->{credential}->{password};
+
+# Package the data in a data structure matching the expected JSON
+my %data =(
+	ticket => {
+		subject => $title,
+        comment => {
+        	body => $body
+        },
+        custom_fields => [
+                    {'id' => 108886, 'value' => $product},		# Product custome field
+                    {"id" => 112789, 'value' => "email"}		# Issue initiation
+                  ],
+    },
+);
+
+# Encode the data structure to JSON
+my $data = encode_json(\%data);
+
+#
+# Create request
+#
+my $credentials = encode_base64("$username:$password");
+
+# Create a user agent and make the request
+my $ua = LWP::UserAgent->new(ssl_opts =>{ verify_hostname => 0 });
+my $response = $ua->post($URL, 
+						 'Content' => $data,
+                         'Content-Type' => 'application/json',
+                         'Authorization' => "Basic $credentials");
+
+# Check for HTTP error codes
+die 'http status: ' . $response->code . '  ' . $response->message
+    unless ($response->is_success);
+
+# Decode the JSON into a Perl data structure
+my $response = decode_json($response->content);
+print Dumper($response);
+my $ticketId=$response->{audit}->{ticket_id};
+$ec->setProperty("/myJob/zendesk/ticketId", $ticketId);
+$ec->setProperty("summary", "Zendesk ticket created: $ticketId");
+
+
+</command>
+        <condition />
+        <description />
+        <errorHandling>failProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <logFileName />
+        <parallel>0</parallel>
+        <postProcessor />
+        <precondition />
+        <releaseMode>none</releaseMode>
+        <resourceName />
+        <shell>ec-perl</shell>
+        <timeLimit />
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <workingDirectory />
+        <workspaceName />
+        <propertySheet>
+        </propertySheet>
+        <attachedCredentials>
+          <credentialName>zendesk</credentialName>
+        </attachedCredentials>
+      </step>
+    </procedure>
+  </project>
+</exportedData>
