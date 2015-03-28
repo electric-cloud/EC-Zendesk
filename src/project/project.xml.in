@@ -9,11 +9,6 @@ Developped for the Citrix Hackathon</description>
     <workspaceName/>
     <propertySheet>
       <property>
-        <propertyName>ec_tags</propertyName>
-        <expandable>1</expandable>
-        <value> ec github </value>
-      </property>
-      <property>
         <propertyName>ec_visibility</propertyName>
         <expandable>1</expandable>
         <value>pickListOnly</value>
@@ -47,7 +42,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>1</value>
+        <value>4</value>
       </property>
       <property>
         <propertyName>version</propertyName>

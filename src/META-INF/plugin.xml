@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.1</version>
+  <version>1.0.0.4</version>
   <label>EC-Zendesk</label>
   <description>A set of administrative tasks to help manage your server.
 2015-03-27 admin Initial version</description>
