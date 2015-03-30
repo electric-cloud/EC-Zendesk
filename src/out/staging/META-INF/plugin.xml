@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.4</version>
+  <version>1.0.0.5</version>
   <label>EC-Zendesk</label>
-  <description>A set of administrative tasks to help manage your server.
-2015-03-27 admin Initial version</description>
+  <description>Integrates Zendesk ticketing system into Electric Commander.
+2015-03-30 admin Added version</description>
   <help>help.xml</help>
   <author>L. Rochette</author>
   <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>

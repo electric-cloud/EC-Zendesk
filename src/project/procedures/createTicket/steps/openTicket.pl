@@ -19,6 +19,7 @@ my $title = "$[ticketSubject]";
 my $body  = "$[ticketDescription]";
 my $URL   = "$[zendeskURL]/tickets.json";
 my $product="$[product]";
+my $version="$[version]";
 
 #############################################################################
 #
@@ -41,7 +42,8 @@ my %data =(
         },
         custom_fields => [
                     {'id' => 108886, 'value' => $product},		# Product custome field
-                    {"id" => 112789, 'value' => "email"}		# Issue initiation
+                    {"id" => 112789, 'value' => "email"},		# Issue initiation
+                    {"id" => 109953, 'value' => $version},		# product version
                   ],
     },
 );
