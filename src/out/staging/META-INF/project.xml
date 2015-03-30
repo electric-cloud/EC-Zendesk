@@ -23,13 +23,13 @@ Developped for the Citrix Hackathon</description>
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.5/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.6/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.0.0.5&lt;/p>
+&lt;p>Plugin Version 1.0.0.6&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -41,7 +41,7 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>5</value>
+        <value>6</value>
       </property>
       <property>
         <propertyName>version</propertyName>
@@ -69,7 +69,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.0.0.5</value></property></propertySheet>
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.6</value></property></propertySheet>
     <credential>
       <credentialName>zendesk</credentialName>
       <description />
@@ -239,8 +239,8 @@ my %createTicket = (
         <defaultValue />
         <description>The comment you want to add to the ticket</description>
         <expansionDeferred>0</expansionDeferred>
-        <required>0</required>
-        <type>entry</type>
+        <required>1</required>
+        <type>textarea</type>
       </formalParameter>
       <formalParameter>
         <formalParameterName>ticketNumber</formalParameterName>
@@ -299,7 +299,7 @@ my %data =(
 	ticket => {
         comment => {
 			public => "true",
-        	body => $comment
+        	body => "Comment added by $[/myProject/projectName]\n\n$comment"
         },
     },
 );
@@ -589,7 +589,7 @@ my %data =(
 	ticket => {
 		subject => $title,
         comment => {
-        	body => $body
+        	body => "Ticket created by $[/myProject/projectName]\n\n$body"
         },
         custom_fields => [
                     {'id' => 108886, 'value' => $product},		# Product custome field

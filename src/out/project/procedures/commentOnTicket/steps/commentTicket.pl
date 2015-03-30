@@ -35,7 +35,7 @@ my %data =(
 	ticket => {
         comment => {
 			public => "true",
-        	body => $comment
+        	body => "Comment added by $[/myProject/projectName]\n\n$comment"
         },
     },
 );
