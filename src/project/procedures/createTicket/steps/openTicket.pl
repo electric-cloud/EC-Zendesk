@@ -38,7 +38,7 @@ my %data =(
 	ticket => {
 		subject => $title,
         comment => {
-        	body => "Ticket created by $[/myProject/projectName]\n\n$body"
+        	body => "Ticket created by $[/myParent/projectName]\n\n$body"
         },
         custom_fields => [
                     {'id' => 108886, 'value' => $product},		# Product custome field

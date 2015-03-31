@@ -1,4 +1,7 @@
 2015-03-31 System Administrator <lrochette@electric-cloud.com>
+  * 1.0.0.10: Description header should reference the caller project
+
+2015-03-31 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.9: Copy credentials upon promotion
 
 2015-03-30 System Administrator <lrochette@electric-cloud.com>
