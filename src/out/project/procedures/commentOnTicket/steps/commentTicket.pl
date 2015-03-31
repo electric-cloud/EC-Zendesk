@@ -15,7 +15,7 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "$[]credential]";
+my $creds = "$[credential]";
 my $comment = "$[comment]";
 my $URL   = "$[/myProject/zendeskURL]/tickets/$[ticketNumber].json";
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.8</version>
+  <version>1.0.0.9</version>
   <label>EC-Zendesk</label>
   <description>Integrates Zendesk ticketing system into Electric Commander.
-2015-03-30 admin Added parameter for credential name</description>
+2015-03-31 admin Copy credentials upon promotion</description>
   <help>help.xml</help>
   <author>L. Rochette</author>
   <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>

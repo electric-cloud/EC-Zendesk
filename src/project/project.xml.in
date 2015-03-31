@@ -42,7 +42,87 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>8</value>
+        <value>9</value>
+      </property>
+      <property>
+        <propertyName>promoteAction</propertyName>
+        <description>Upon promotion, copy the current credential and attach them to the steps</description>
+        <expandable>1</expandable>
+        <value>if ($upgradeAction eq "upgrade") {
+    my $query   = $commander-&gt;newBatch();
+    my $creds   = $query-&gt;getCredentials("\$[/plugins/$otherPluginName]");
+
+    local $self-&gt;{abortOnError} = 0;
+    $query-&gt;submit();
+
+
+    # Copy configuration credentials and attach them to the appropriate steps
+    my @nodes = $query-&gt;findnodes('credential');
+        for (@nodes) {
+            my $cred = $_-&gt;string_value;
+
+            # Clone the credential
+            $batch-&gt;clone(
+                          {
+                            path      =&gt; "/plugins/$otherPluginName/project/credentials/$cred",
+                            cloneName =&gt; "/plugins/$pluginName/project/credentials/$cred"
+                          }
+                         );
+
+            # Make sure the credential has an ACL entry for the new project principal
+            my $xpath = $commander-&gt;getAclEntry(
+                                                "user",
+                                                "project: $pluginName",
+                                                {
+                                                   projectName    =&gt; $otherPluginName,
+                                                   credentialName =&gt; $cred
+                                                }
+                                               );
+            if ($xpath-&gt;findvalue('//code') eq 'NoSuchAclEntry') {
+                $batch-&gt;deleteAclEntry(
+                                       "user",
+                                       "project: $otherPluginName",
+                                       {
+                                          projectName    =&gt; $pluginName,
+                                          credentialName =&gt; $cred
+                                       }
+                                      );
+                $batch-&gt;createAclEntry(
+                                       "user",
+                                       "project: $pluginName",
+                                       {
+                                          projectName                =&gt; $pluginName,
+                                          credentialName             =&gt; $cred,
+                                          readPrivilege              =&gt; "allow",
+                                          modifyPrivilege            =&gt; "allow",
+                                          executePrivilege           =&gt; "allow",
+                                          changePermissionsPrivilege =&gt; "allow"
+                                       }
+                                      );
+            }
+
+            # Attach the credential to the appropriate steps
+            $batch-&gt;attachCredential(
+                                     "\$[/plugins/$pluginName/project]",
+                                     $cred,
+                                     {
+                                        procedureName =&gt; 'commentOnTicket',
+                                        stepName      =&gt; 'commentTicket'
+                                     }
+                                    );
+            $batch-&gt;attachCredential(
+                                     "\$[/plugins/$pluginName/project]",
+                                     $cred,
+                                     {
+                                        procedureName =&gt; 'createTicket',
+                                        stepName      =&gt; 'openTicket'
+                                     }
+                                    );
+        }
+    }
+}
+
+</value>
       </property>
       <property>
         <propertyName>version</propertyName>
@@ -61,14 +141,6 @@ History:
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
     <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>@PLUGIN_VERSION@</value></property></propertySheet>
-    <credential>
-      <credentialName>zendesk</credentialName>
-      <description/>
-      <password>dXEbz0wIkXRx9eyRmQrAsGuLHqMlzTYDNgnyBHmjh9xLIhMNgbfETFRMdLeXRsNH</password>
-      <userName>ecsupport@electric-cloud.com</userName>
-      <propertySheet>
-      </propertySheet>
-    </credential>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -281,9 +353,6 @@ History:
         <workspaceName/>
         <propertySheet>
         </propertySheet>
-        <attachedCredentials>
-          <credentialName>zendesk</credentialName>
-        </attachedCredentials>
       </step>
     </procedure>
     <procedure>
@@ -504,9 +573,6 @@ History:
         <workspaceName/>
         <propertySheet>
         </propertySheet>
-        <attachedCredentials>
-          <credentialName>zendesk</credentialName>
-        </attachedCredentials>
       </step>
     </procedure>
   </project>
