@@ -14,10 +14,10 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "zendesk";
+my $creds = "$[credential]";
 my $title = "$[ticketSubject]";
 my $body  = "$[ticketDescription]";
-my $URL   = "$[zendeskURL]/tickets.json";
+my $URL   = "$[/myProject/zendeskURL]/tickets.json";
 my $product="$[product]";
 my $version="$[version]";
 

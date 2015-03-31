@@ -23,13 +23,13 @@ Developped for the Citrix Hackathon</description>
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.6/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.7/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.0.0.6&lt;/p>
+&lt;p>Plugin Version 1.0.0.7&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -41,7 +41,7 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>6</value>
+        <value>7</value>
       </property>
       <property>
         <propertyName>version</propertyName>
@@ -52,6 +52,12 @@ History:
 </description>
         <expandable>1</expandable>
         <value>1.0.0</value>
+      </property>
+      <property>
+        <propertyName>zendeskURL</propertyName>
+        <description />
+        <expandable>1</expandable>
+        <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
     <property><propertyName>ec_setup</propertyName><value># Data that drives the create step picker registration for this plugin.
 my %commentOnTicket = ( 
@@ -69,7 +75,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.0.0.6</value></property></propertySheet>
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.7</value></property></propertySheet>
     <credential>
       <credentialName>zendesk</credentialName>
       <description />
@@ -250,14 +256,6 @@ my %createTicket = (
         <required>1</required>
         <type>entry</type>
       </formalParameter>
-      <formalParameter>
-        <formalParameterName>zendeskURL</formalParameterName>
-        <defaultValue>https://electriccloud.zendesk.com/api/v2</defaultValue>
-        <description />
-        <expansionDeferred>0</expansionDeferred>
-        <required>1</required>
-        <type>entry</type>
-      </formalParameter>
       <step>
         <stepName>commentTicket</stepName>
         <alwaysRun>0</alwaysRun>
@@ -281,7 +279,7 @@ use MIME::Base64;
 #############################################################################
 my $creds = "zendesk";
 my $comment = "$[comment]";
-my $URL   = "$[zendeskURL]/tickets/$[ticketNumber].json";
+my $URL   = "$[/myProject/zendeskURL]/tickets/$[ticketNumber].json";
 
 #############################################################################
 #
@@ -376,6 +374,16 @@ print Dumper($response);
               <propertySheet>
                 <property>
                   <propertyName>Title</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>credential</propertyName>
                   <propertySheet>
                     <property>
                       <propertyName>formType</propertyName>
@@ -506,6 +514,14 @@ print Dumper($response);
         </property>
       </propertySheet>
       <formalParameter>
+        <formalParameterName>credential</formalParameterName>
+        <defaultValue>zendesk</defaultValue>
+        <description>Nameof the credential to use.</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
         <formalParameterName>product</formalParameterName>
         <defaultValue>electriccommander</defaultValue>
         <description />
@@ -537,14 +553,6 @@ print Dumper($response);
         <required>0</required>
         <type>entry</type>
       </formalParameter>
-      <formalParameter>
-        <formalParameterName>zendeskURL</formalParameterName>
-        <defaultValue>https://electriccloud.zendesk.com/api/v2</defaultValue>
-        <description />
-        <expansionDeferred>0</expansionDeferred>
-        <required>1</required>
-        <type>entry</type>
-      </formalParameter>
       <step>
         <stepName>openTicket</stepName>
         <alwaysRun>0</alwaysRun>
@@ -565,10 +573,10 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "zendesk";
+my $creds = "$[credential]";
 my $title = "$[ticketSubject]";
 my $body  = "$[ticketDescription]";
-my $URL   = "$[zendeskURL]/tickets.json";
+my $URL   = "$[/myProject/zendeskURL]/tickets.json";
 my $product="$[product]";
 my $version="$[version]";
 

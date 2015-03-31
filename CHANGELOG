@@ -1,4 +1,7 @@
 2015-03-30 System Administrator <lrochette@electric-cloud.com>
+  * 1.0.0.7: Added parameter for credential name
+
+2015-03-30 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.6: message to indicate how the ticket or comment were created
 
 2015-03-30 System Administrator <lrochette@electric-cloud.com>
