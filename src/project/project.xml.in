@@ -42,12 +42,12 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>10</value>
+        <value>11</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
         <description>Upon promotion, copy the current credential and attach them to the steps</description>
-        <expandable>1</expandable>
+        <expandable>0</expandable>
         <value>if ($upgradeAction eq "upgrade") {
     my $query   = $commander-&gt;newBatch();
     my $creds   = $query-&gt;getCredentials("\$[/plugins/$otherPluginName]");

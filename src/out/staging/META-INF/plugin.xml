@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.10</version>
+  <version>1.0.0.11</version>
   <label>EC-Zendesk</label>
   <description>Integrates Zendesk ticketing system into Electric Commander.
 2015-03-31 admin Description header should reference the caller project</description>
