@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.7</version>
+  <version>1.0.0.8</version>
   <label>EC-Zendesk</label>
   <description>Integrates Zendesk ticketing system into Electric Commander.
 2015-03-30 admin Added parameter for credential name</description>

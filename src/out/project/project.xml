@@ -23,13 +23,13 @@ Developped for the Citrix Hackathon</description>
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.7/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.8/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.0.0.7&lt;/p>
+&lt;p>Plugin Version 1.0.0.8&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -41,7 +41,7 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>7</value>
+        <value>8</value>
       </property>
       <property>
         <propertyName>version</propertyName>
@@ -75,7 +75,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.0.0.7</value></property></propertySheet>
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.8</value></property></propertySheet>
     <credential>
       <credentialName>zendesk</credentialName>
       <description />
@@ -111,6 +111,16 @@ my %createTicket = (
                 </property>
                 <property>
                   <propertyName>comment</propertyName>
+                  <propertySheet>
+                    <property>
+                      <propertyName>formType</propertyName>
+                      <expandable>1</expandable>
+                      <value>standard</value>
+                    </property>
+                  </propertySheet>
+                </property>
+                <property>
+                  <propertyName>credential</propertyName>
                   <propertySheet>
                     <property>
                       <propertyName>formType</propertyName>
@@ -249,6 +259,14 @@ my %createTicket = (
         <type>textarea</type>
       </formalParameter>
       <formalParameter>
+        <formalParameterName>credential</formalParameterName>
+        <defaultValue>zendesk</defaultValue>
+        <description />
+        <expansionDeferred>0</expansionDeferred>
+        <required>0</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
         <formalParameterName>ticketNumber</formalParameterName>
         <defaultValue />
         <description>The Zendesk ticket number to add a comment on</description>
@@ -277,7 +295,7 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "zendesk";
+my $creds = "$[]credential]";
 my $comment = "$[comment]";
 my $URL   = "$[/myProject/zendeskURL]/tickets/$[ticketNumber].json";
 
