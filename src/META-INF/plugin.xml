@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.18</version>
+  <version>1.0.0.19</version>
   <label>EC-Zendesk</label>
   <description>Integrates Zendesk ticketing system into Electric Commander.</description>
   <help>help.xml</help>
@@ -11,15 +11,15 @@
   <commander-version min="4.1"/>
 
   <configure>configurations.xml</configure>
-    <components>
-        <component name="ConfigurationManagement">
-              <javascript>war/ecplugins.EC-Zendesk.ConfigurationManagement/ecplugins.EC-Zendesk.ConfigurationManagement.noc
+  <components>
+      <component name="ConfigurationManagement">
+          <javascript>war/ecplugins.EC-Zendesk.ConfigurationManagement/ecplugins.EC-Zendesk.ConfigurationManagement.noc
 ache.js</javascript>
-          </component>
-      </components>
+      </component>
+  </components>
     <!-- Specify a category for this plugin; this is used in filtered lists in the Plugin Manager.
          Typically, it is set to System or Step.
      -->
   <category>Administration</category>
- 	  <depends>EC-Core</depends>
+  <depends>EC-Core</depends>
 </plugin>
