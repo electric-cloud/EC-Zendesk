@@ -5,8 +5,25 @@
 
   <!-- Plugin-specific properties -->
   <property name="pluginKey" value="EC-Zendesk" />
-  <property name="pluginVersion" value="1.0.0.29" />
+  <property name="pluginVersion" value="1.0.0.33" />
 
+  
+  <!-- Java code specific properties -->
+  <property name="gwtModules" value="ecplugins.Zendesk.ConfigurationManagement" />
+  <property name="package.export.src" value="PLUGIN.srcs"/>
+
+    <!-- Package sources for exported utility classes. -->
+    <fileset id="PLUGIN.srcs" dir="${dir.src}">
+      <include name="**/PluginConfigList.java"/>
+      <include name="**/PluginConfigListLoader.*"/>
+    </fileset>
+        
+        
+        <fileset id="images" dir="${dir.htdocs}">
+      <include name="**/PluginConfigList.java"/>
+      <include name="**/PluginConfigListLoader.*"/>
+    </fileset>
+ 
   <path id="extras">
     <!-- Add extra jars that need to be in the classpath for building the 
          plugin here. For example:

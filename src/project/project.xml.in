@@ -48,7 +48,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>29</value>
+        <value>33</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
