@@ -13,8 +13,7 @@
   <configure>configurations.xml</configure>
   <components>
       <component name="ConfigurationManagement">
-          <javascript>war/ecplugins.EC-Zendesk.ConfigurationManagement/ecplugins.EC-Zendesk.ConfigurationManagement.noc
-ache.js</javascript>
+          <javascript>war/ecplugins.Zendesk.ConfigurationManagement/ecplugins.Zendesk.ConfigurationManagement.nocache.js</javascript>
       </component>
   </components>
     <!-- Specify a category for this plugin; this is used in filtered lists in the Plugin Manager.
