@@ -14,7 +14,22 @@ Developped for the Citrix Hackathon</description>
           <property>
             <propertyName>createConfigForm</propertyName>
             <expandable>1</expandable>
-            <value/>
+            <value>&lt;editor&gt;
+    &lt;formElement&gt;
+        &lt;type&gt;entry&lt;/type&gt;
+        &lt;label&gt;Configuration Name:&lt;/label&gt;
+        &lt;property&gt;config&lt;/property&gt;
+        &lt;value&gt;&lt;/value&gt;
+        &lt;required&gt;1&lt;/required&gt;
+    &lt;/formElement&gt;
+    &lt;formElement&gt;
+        &lt;type&gt;credential&lt;/type&gt;
+        &lt;label&gt;Login as:&lt;/label&gt;
+        &lt;property&gt;credential&lt;/property&gt;
+        &lt;value&gt;&lt;/value&gt;
+        &lt;required&gt;0&lt;/required&gt;
+    &lt;/formElement&gt;
+&lt;/editor&gt;</value>
           </property>
           <property>
             <propertyName>editConfigForm</propertyName>
@@ -71,7 +86,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>65</value>
+        <value>66</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>

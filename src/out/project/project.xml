@@ -13,7 +13,22 @@ Developped for the Citrix Hackathon</description>
           <property>
             <propertyName>createConfigForm</propertyName>
             <expandable>1</expandable>
-            <value />
+            <value>&lt;editor>
+    &lt;formElement>
+        &lt;type>entry&lt;/type>
+        &lt;label>Configuration Name:&lt;/label>
+        &lt;property>config&lt;/property>
+        &lt;value>&lt;/value>
+        &lt;required>1&lt;/required>
+    &lt;/formElement>
+    &lt;formElement>
+        &lt;type>credential&lt;/type>
+        &lt;label>Login as:&lt;/label>
+        &lt;property>credential&lt;/property>
+        &lt;value>&lt;/value>
+        &lt;required>0&lt;/required>
+    &lt;/formElement>
+&lt;/editor></value>
           </property>
           <property>
             <propertyName>editConfigForm</propertyName>
@@ -52,13 +67,13 @@ Developped for the Citrix Hackathon</description>
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.65/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.66/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.0.0.65&lt;/p>
+&lt;p>Plugin Version 1.0.0.66&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -70,7 +85,7 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>65</value>
+        <value>66</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -261,7 +276,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.0.0.65</value></property></propertySheet>
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.66</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
