@@ -3,8 +3,9 @@
   <exportPath>/projects/@PLUGIN_KEY@</exportPath>
   <project>
     <projectName>@PLUGIN_KEY@</projectName>
-    <description>Plugin to interact with Zendesk
-Developped for the Citrix Hackathon</description>
+    <description>&lt;html&gt;
+Plugin to interact with Zendesk. Originally developed for the &lt;a html="http://citrixapps.challengepost.com/submissions"&gt;Citrix Hackathon&lt;/a&gt;.&lt;br/&gt;
+Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2015 conference for this project.&lt;/html&gt;</description>
     <resourceName/>
     <workspaceName/>
     <propertySheet>
@@ -86,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>66</value>
+        <value>71</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -395,6 +396,55 @@ History:
         <timeLimitUnits>minutes</timeLimitUnits>
         <workingDirectory/>
         <workspaceName/>
+        <propertySheet>
+        </propertySheet>
+      </step>
+    </procedure>
+    <procedure>
+      <procedureName>createConfiguration</procedureName>
+      <description>Created by EC-Admin to manage credential configuration</description>
+      <propertySheet>
+      </propertySheet>
+      <formalParameter>
+        <formalParameterName>config</formalParameterName>
+        <description>Configuration Name</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <formalParameter>
+        <formalParameterName>credential</formalParameterName>
+        <expansionDeferred>0</expansionDeferred>
+        <required>0</required>
+        <type>credential</type>
+      </formalParameter>
+      <step>
+        <stepName>CreateConfiguration</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>PLACEHOLDER</command>
+        <description>Create a EC-Zendesk configuration</description>
+        <errorHandling>failProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <parallel>0</parallel>
+        <postProcessor>postp</postProcessor>
+        <releaseMode>none</releaseMode>
+        <shell>ec-perl</shell>
+        <timeLimit>5</timeLimit>
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <propertySheet>
+        </propertySheet>
+      </step>
+      <step>
+        <stepName>CreateAndAttachCredential</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>PLACEHOLDER</command>
+        <errorHandling>failProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <parallel>0</parallel>
+        <releaseMode>none</releaseMode>
+        <shell>ec-perl</shell>
         <propertySheet>
         </propertySheet>
       </step>
