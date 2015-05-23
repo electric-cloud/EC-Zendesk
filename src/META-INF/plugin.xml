@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.0.0.59</version>
+  <version>1.0.0.62</version>
   <label>EC-Zendesk</label>
-  <description>Integrates Zendesk ticketing system into Electric Commander.</description>
+  <description>Integrates Zendesk ticketing system into Electric Commander.
+2015-05-22 admin Fixed configuration in plugin.xml</description>
   <help>help.xml</help>
   <author>L. Rochette</author>
   <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>
@@ -13,8 +14,7 @@
   <configure>configurations.xml</configure>
   <components>
       <component name="ConfigurationManagement">
-          <javascript>war/ecplugins.EC-Zendesk.ConfigurationManagement/ecplugins.EC-Zendesk.ConfigurationManagement.noc
-ache.js</javascript>
+          <javascript>war/ecplugins.Zendesk.ConfigurationManagement/ecplugins.Zendesk.ConfigurationManagement.nocache.js</javascript>
       </component>
   </components>
     <!-- Specify a category for this plugin; this is used in filtered lists in the Plugin Manager.

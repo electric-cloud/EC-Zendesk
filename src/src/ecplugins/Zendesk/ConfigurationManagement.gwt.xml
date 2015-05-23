@@ -1,7 +1,9 @@
 <module>
     <entry-point class="ecplugins.Zendesk.client.ConfigurationManagementFactory"/>
     <inherits name="com.electriccloud.commander.gwt.ComponentBase"/>
+<!-- 
     <inherits name="com.google.gwt.inject.Inject"/>
+-->
     <inherits name="ecinternal.ECInternal"/>
     
     <!-- The following property limits the plugin to work with Firefox.  This saves tremendously
