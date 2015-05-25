@@ -87,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>72</value>
+        <value>75</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -377,7 +377,7 @@ History:
         <type>entry</type>
       </formalParameter>
       <step>
-        <stepName>commentTicket</stepName>
+        <stepName>commentOnTicket</stepName>
         <alwaysRun>0</alwaysRun>
         <broadcast>0</broadcast>
         <command>PLACEHOLDER</command>
@@ -436,15 +436,25 @@ History:
         </propertySheet>
       </step>
       <step>
-        <stepName>CreateAndAttachCredential</stepName>
+        <stepName>createAndAttachCredential</stepName>
         <alwaysRun>0</alwaysRun>
         <broadcast>0</broadcast>
         <command>PLACEHOLDER</command>
+        <condition/>
+        <description/>
         <errorHandling>failProcedure</errorHandling>
         <exclusiveMode>none</exclusiveMode>
+        <logFileName/>
         <parallel>0</parallel>
+        <postProcessor/>
+        <precondition/>
         <releaseMode>none</releaseMode>
+        <resourceName/>
         <shell>ec-perl</shell>
+        <timeLimit/>
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <workingDirectory/>
+        <workspaceName/>
         <propertySheet>
         </propertySheet>
       </step>
@@ -646,7 +656,7 @@ History:
         <type>entry</type>
       </formalParameter>
       <step>
-        <stepName>openTicket</stepName>
+        <stepName>createTicket</stepName>
         <alwaysRun>0</alwaysRun>
         <broadcast>0</broadcast>
         <command>PLACEHOLDER</command>
