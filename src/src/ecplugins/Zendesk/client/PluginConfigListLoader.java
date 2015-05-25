@@ -1,4 +1,3 @@
-
 // PluginConfigListLoader.java --
 //
 // PluginConfigListLoader.java is part of ElectricCommander.
@@ -106,7 +105,7 @@ public class PluginConfigListLoader
                                            .isDebugEnabled()) {
                                 m_component.getLog()
                                            .debug(
-                                               "Recieved CGI response: "
+                                               "Received CGI response: "
                                                + responseString
                                                + " isHTML:" + isHtml
                                                + " error:" + error);
