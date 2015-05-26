@@ -1,4 +1,7 @@
 2015-05-25 System Administrator <lrochette@electric-cloud.com>
+  * 1.0.0.80: Attach credential to the step
+
+2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.76: Adding createConfiguration procedure
 
 2015-05-22 System Administrator <lrochette@electric-cloud.com>
