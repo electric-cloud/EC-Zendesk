@@ -48,7 +48,7 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
         </propertySheet>
       </property>
       <property>
-        <propertyName>configure</propertyName>
+        <propertyName>configureCredentials</propertyName>
         <description/>
         <expandable>1</expandable>
         <value>1</value>
@@ -87,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>80</value>
+        <value>81</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>

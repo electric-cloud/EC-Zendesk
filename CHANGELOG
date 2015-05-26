@@ -1,4 +1,7 @@
 2015-05-25 System Administrator <lrochette@electric-cloud.com>
+  * 1.0.0.81: Rename configure into configureCredentials
+
+2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.80: Attach credential to the step
 
 2015-05-25 System Administrator <lrochette@electric-cloud.com>
