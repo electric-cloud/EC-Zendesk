@@ -69,13 +69,13 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 &lt;head&gt;
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" /&gt;
     &lt;title&gt;EC-Zendesk Plugin&lt;/title&gt;
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.82/pluginhelp.css" type="text/css" media= "screen" /&gt;
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.1.0.83/pluginhelp.css" type="text/css" media= "screen" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
     &lt;div class="help"&gt;
         &lt;h1&gt;EC-Zendesk&lt;/h1&gt;
-&lt;p&gt;Plugin Version 1.0.0.82&lt;/p&gt;
+&lt;p&gt;Plugin Version 1.1.0.83&lt;/p&gt;
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" /&gt;
 
         &lt;p&gt;EC-Zendesk is a collection of procedures to help you
@@ -87,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>82</value>
+        <value>83</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -174,10 +174,14 @@ interact with Zendesk.&lt;/p&gt;
         <description>Version of the EC-Zendesk project
 
 History:
-- version 1.0.0 initial version created for the Citrix hackathon
+- version 1.1.0
+    + Added credential configuration management
+
+- version 1.0.0 
+    + initial version created for the Citrix hackathon
 </description>
         <expandable>1</expandable>
-        <value>1.0.0</value>
+        <value>1.1.0</value>
       </property>
       <property>
         <propertyName>zendeskURL</propertyName>
@@ -185,7 +189,7 @@ History:
         <expandable>1</expandable>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>1.0.0.82</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>1.1.0.83</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -362,10 +366,10 @@ History:
       </formalParameter>
       <formalParameter>
         <formalParameterName>credential</formalParameterName>
-        <defaultValue>zendesk</defaultValue>
-        <description/>
+        <defaultValue/>
+        <description>Name of the credential to use to log into Zendesk</description>
         <expansionDeferred>0</expansionDeferred>
-        <required>0</required>
+        <required>1</required>
         <type>entry</type>
       </formalParameter>
       <formalParameter>
@@ -620,8 +624,8 @@ History:
       </propertySheet>
       <formalParameter>
         <formalParameterName>credential</formalParameterName>
-        <defaultValue>zendesk</defaultValue>
-        <description>Nameof the credential to use.</description>
+        <defaultValue/>
+        <description>Name of the credential to use to log into Zendesk</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
         <type>entry</type>
@@ -629,23 +633,23 @@ History:
       <formalParameter>
         <formalParameterName>product</formalParameterName>
         <defaultValue>electriccommander</defaultValue>
-        <description/>
+        <description>The name of the product for which you want to open a ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
         <type>select</type>
       </formalParameter>
       <formalParameter>
         <formalParameterName>ticketDescription</formalParameterName>
-        <defaultValue>This ticket has been created automatically by $[/myProject/projectName]:$[/myProcedure/procedureName]</defaultValue>
-        <description>The full description of the ticket</description>
+        <defaultValue/>
+        <description>The full description of your issue to add to your ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
         <type>textarea</type>
       </formalParameter>
       <formalParameter>
         <formalParameterName>ticketSubject</formalParameterName>
-        <defaultValue>TEST ignore - $[/increment /server/counters/$[/myProject/projectName]/jobCounter]</defaultValue>
-        <description/>
+        <defaultValue/>
+        <description>The subject of your ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
         <type>entry</type>

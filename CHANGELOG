@@ -1,3 +1,6 @@
+2015-05-27 System Administrator <lrochette@electric-cloud.com>
+  * 1.1.0.83: Added credential configuration management
+
 2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.81: Rename configure into configureCredentials
 
