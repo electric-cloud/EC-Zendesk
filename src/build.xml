@@ -5,7 +5,7 @@
 
   <!-- Plugin-specific properties -->
   <property name="pluginKey" value="EC-Zendesk" />
-  <property name="pluginVersion" value="1.2.0.90" />
+  <property name="pluginVersion" value="1.2.0.91" />
 
   
   <!-- Java code specific properties -->
