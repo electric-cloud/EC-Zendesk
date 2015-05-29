@@ -87,86 +87,77 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>91</value>
+        <value>92</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
-        <description>Upon promotion, copy the current credential and attach them to the steps</description>
-        <expandable>0</expandable>
-        <value>if ($upgradeAction eq "upgrade") {
-    my $query   = $commander-&gt;newBatch();
-    my $creds   = $query-&gt;getCredentials("\$[/plugins/$otherPluginName]");
+        <expandable>1</expandable>
+        <value>
 
-    local $self-&gt;{abortOnError} = 0;
+if ($upgradeAction eq "upgrade") {
+    my $query = $commander-&gt;newBatch();
+    my $newcfg = $query-&gt;getProperty(
+        "/plugins/$pluginName/project/plugin_cfgs");
+    my $oldcfgs = $query-&gt;getProperty(
+        "/plugins/$otherPluginName/project/plugin_cfgs");
+	my $creds = $query-&gt;getCredentials("\$[/plugins/$otherPluginName]");
+
+	local $self-&gt;{abortOnError} = 0;
     $query-&gt;submit();
 
-
-    # Copy configuration credentials and attach them to the appropriate steps
-    my @nodes = $query-&gt;findnodes('credential');
+    # if new plugin does not already have cfgs
+    if ($query-&gt;findvalue($newcfg,"code") eq "NoSuchProperty") {
+        # if old cfg has some cfgs to copy
+        if ($query-&gt;findvalue($oldcfgs,"code") ne "NoSuchProperty") {
+            $batch-&gt;clone({
+                path =&gt; "/plugins/$otherPluginName/project/plugin_cfgs",
+                cloneName =&gt; "/plugins/$pluginName/project/plugin_cfgs"
+            });
+        }
+    }
+	
+	# Copy configuration credentials and attach them to the appropriate steps
+    my $nodes = $query-&gt;find($creds);
+    if ($nodes) {
+        my @nodes = $nodes-&gt;findnodes("credential/credentialName");
         for (@nodes) {
             my $cred = $_-&gt;string_value;
 
             # Clone the credential
-            $batch-&gt;clone(
-                          {
-                            path      =&gt; "/plugins/$otherPluginName/project/credentials/$cred",
-                            cloneName =&gt; "/plugins/$pluginName/project/credentials/$cred"
-                          }
-                         );
+            $batch-&gt;clone({
+                path =&gt; "/plugins/$otherPluginName/project/credentials/$cred",
+                cloneName =&gt; "/plugins/$pluginName/project/credentials/$cred"
+            });
 
             # Make sure the credential has an ACL entry for the new project principal
-            my $xpath = $commander-&gt;getAclEntry(
-                                                "user",
-                                                "project: $pluginName",
-                                                {
-                                                   projectName    =&gt; $otherPluginName,
-                                                   credentialName =&gt; $cred
-                                                }
-                                               );
-            if ($xpath-&gt;findvalue('//code') eq 'NoSuchAclEntry') {
-                $batch-&gt;deleteAclEntry(
-                                       "user",
-                                       "project: $otherPluginName",
-                                       {
-                                          projectName    =&gt; $pluginName,
-                                          credentialName =&gt; $cred
-                                       }
-                                      );
-                $batch-&gt;createAclEntry(
-                                       "user",
-                                       "project: $pluginName",
-                                       {
-                                          projectName                =&gt; $pluginName,
-                                          credentialName             =&gt; $cred,
-                                          readPrivilege              =&gt; "allow",
-                                          modifyPrivilege            =&gt; "allow",
-                                          executePrivilege           =&gt; "allow",
-                                          changePermissionsPrivilege =&gt; "allow"
-                                       }
-                                      );
+            my $xpath = $commander-&gt;getAclEntry("user", "project: $pluginName", {
+                projectName =&gt; $otherPluginName,
+                credentialName =&gt; $cred
+            });
+            if ($xpath-&gt;findvalue("//code") eq "NoSuchAclEntry") {
+                $batch-&gt;deleteAclEntry("user", "project: $otherPluginName", {
+                    projectName =&gt; $pluginName,
+                    credentialName =&gt; $cred
+                });
+                $batch-&gt;createAclEntry("user", "project: $pluginName", {
+                    projectName =&gt; $pluginName,
+                    credentialName =&gt; $cred,
+                    readPrivilege =&gt; "allow",
+                    modifyPrivilege =&gt; "allow",
+                    executePrivilege =&gt; "allow",
+                    changePermissionsPrivilege =&gt; "allow"
+                });
             }
 
-            # Attach the credential to the appropriate steps
-            $batch-&gt;attachCredential(
-                                     "\$[/plugins/$pluginName/project]",
-                                     $cred,
-                                     {
-                                        procedureName =&gt; 'commentOnTicket',
-                                        stepName      =&gt; 'commentTicket'
-                                     }
-                                    );
-            $batch-&gt;attachCredential(
-                                     "\$[/plugins/$pluginName/project]",
-                                     $cred,
-                                     {
-                                        procedureName =&gt; 'createTicket',
-                                        stepName      =&gt; 'openTicket'
-                                     }
-                                    );
+# Attach the credential to the appropriate steps
+            $batch-&gt;attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName =&gt; "XXXXX",
+                stepName =&gt; "XXXXXX"
+            });
+
         }
     }
 }
-
 </value>
       </property>
       <property>
