@@ -87,12 +87,12 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>93</value>
+        <value>94</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
         <description/>
-        <expandable>1</expandable>
+        <expandable>0</expandable>
         <value># upgrade/prmote action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander-&gt;newBatch();
@@ -149,12 +149,16 @@ if ($upgradeAction eq "upgrade") {
                 });
             }
 
-# Attach the credential to the appropriate steps
+           # Attach the credential to the appropriate steps
             $batch-&gt;attachCredential("\$[/plugins/$pluginName/project]", $cred, {
-                procedureName =&gt; "XXXXX",
-                stepName =&gt; "XXXXXX"
+                procedureName =&gt; "createTicket",
+                stepName =&gt; "createTicket"
             });
-
+           
+            $batch-&gt;attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName =&gt; "commentOnTicket",
+                stepName =&gt; "commentOnTicket"
+            });
         }
     }
 }
@@ -167,6 +171,7 @@ if ($upgradeAction eq "upgrade") {
 History:
 - version 1.2.0
     + Added credential configuration deletion
+    +Added ec_setup.pl code to move existing credentials
 
 - version 1.1.0
     + Added credential configuration management
