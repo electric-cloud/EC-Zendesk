@@ -87,13 +87,13 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>92</value>
+        <value>93</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
+        <description/>
         <expandable>1</expandable>
-        <value>
-
+        <value># upgrade/prmote action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander-&gt;newBatch();
     my $newcfg = $query-&gt;getProperty(
