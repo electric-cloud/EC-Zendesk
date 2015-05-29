@@ -1,26 +1,19 @@
+2015-05-29 System Administrator <lrochette@electric-cloud.com>
+  * 1.2.0.88: Added deleteConfiguration
+
 2015-05-27 System Administrator <lrochette@electric-cloud.com>
   * 1.1.0.83: Added credential configuration management
 
 2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.81: Rename configure into configureCredentials
-
-2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.80: Attach credential to the step
-
-2015-05-25 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.76: Adding createConfiguration procedure
 
 2015-05-22 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.72: Adding createConfiguration procedure
 
 2015-05-22 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.71: Adding createConfiguration procedure
-
-2015-05-22 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.66: Adding ui_forms
-
-2015-05-22 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.65: Adding ui_forms
 
 2015-05-22 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.62: Fixed configuration in plugin.xml
@@ -28,36 +21,14 @@
 2015-05-01 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.17: create configure
 
-2015-05-01 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.16: create configure
-
-2015-05-01 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.15: create configure
-
 2015-03-31 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.11: Description header should reference the caller project
 
-2015-03-31 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.10: Description header should reference the caller project
-
-2015-03-31 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.9: Copy credentials upon promotion
-
 2015-03-30 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.8: Added parameter for credential name
-
-2015-03-30 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.7: Added parameter for credential name
-
-2015-03-30 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.6: message to indicate how the ticket or comment were created
-
-2015-03-30 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.5: Added version
 
 2015-03-27 System Administrator <lrochette@electric-cloud.com>
   * 1.0.0.4: Initial version
-
-2015-03-27 System Administrator <lrochette@electric-cloud.com>
-  * 1.0.0.1: Initial version
 
