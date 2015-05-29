@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.1.0.83</version>
+  <version>1.2.0.87</version>
   <label>EC-Zendesk</label>
-  <description>Integrates Zendesk ticketing system into Electric Commander.
-2015-05-27 admin Added credential configuration management</description>
+  <description>Integrates Zendesk ticketing system into Electric Commander.</description>
   <help>help.xml</help>
   <author>L. Rochette</author>
   <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>
@@ -20,6 +19,6 @@
     <!-- Specify a category for this plugin; this is used in filtered lists in the Plugin Manager.
          Typically, it is set to System or Step.
      -->
-  <category>Administration</category>
+  <category>Support</category>
   <depends>EC-Core</depends>
 </plugin>

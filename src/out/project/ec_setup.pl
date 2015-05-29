@@ -80,14 +80,14 @@ my %commentOnTicket = (
   label       => "EC-Zendesk - commentOnTicket", 
   procedure   => "commentOnTicket", 
   description => "Comment on an existing  Zendesk Ticket", 
-  category    => "Administration" 
+  category    => "Support" 
 );
 
 my %createTicket = ( 
   label       => "EC-Zendesk - createTicket", 
   procedure   => "createTicket", 
   description => "Create a Zendesk Ticket", 
-  category    => "Administration" 
+  category    => "Support" 
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);

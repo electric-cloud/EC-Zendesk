@@ -69,13 +69,13 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 &lt;head&gt;
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" /&gt;
     &lt;title&gt;EC-Zendesk Plugin&lt;/title&gt;
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.1.0.83/pluginhelp.css" type="text/css" media= "screen" /&gt;
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.87/pluginhelp.css" type="text/css" media= "screen" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
     &lt;div class="help"&gt;
         &lt;h1&gt;EC-Zendesk&lt;/h1&gt;
-&lt;p&gt;Plugin Version 1.1.0.83&lt;/p&gt;
+&lt;p&gt;Plugin Version 1.2.0.87&lt;/p&gt;
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" /&gt;
 
         &lt;p&gt;EC-Zendesk is a collection of procedures to help you
@@ -87,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>83</value>
+        <value>87</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -174,6 +174,9 @@ interact with Zendesk.&lt;/p&gt;
         <description>Version of the EC-Zendesk project
 
 History:
+- version 1.2.0
+    + Added credential configuration deletion
+
 - version 1.1.0
     + Added credential configuration management
 
@@ -181,7 +184,7 @@ History:
     + initial version created for the Citrix hackathon
 </description>
         <expandable>1</expandable>
-        <value>1.1.0</value>
+        <value>1.2.0</value>
       </property>
       <property>
         <propertyName>zendeskURL</propertyName>
@@ -189,7 +192,7 @@ History:
         <expandable>1</expandable>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>1.1.0.83</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>1.2.0.87</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -682,6 +685,36 @@ History:
         <timeLimitUnits>minutes</timeLimitUnits>
         <workingDirectory/>
         <workspaceName/>
+        <propertySheet>
+        </propertySheet>
+      </step>
+    </procedure>
+    <procedure>
+      <procedureName>DeleteConfiguration</procedureName>
+      <description>Created by EC-Admin to manage credential configuration</description>
+      <propertySheet>
+      </propertySheet>
+      <formalParameter>
+        <formalParameterName>config</formalParameterName>
+        <description>Configuration Name</description>
+        <expansionDeferred>0</expansionDeferred>
+        <required>1</required>
+        <type>entry</type>
+      </formalParameter>
+      <step>
+        <stepName>DeleteConfiguration</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>PLACEHOLDER</command>
+        <description>Delete a EC-Zendesk configuration</description>
+        <errorHandling>failProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <parallel>0</parallel>
+        <postProcessor>postp</postProcessor>
+        <releaseMode>none</releaseMode>
+        <shell>ec-perl</shell>
+        <timeLimit>5</timeLimit>
+        <timeLimitUnits>minutes</timeLimitUnits>
         <propertySheet>
         </propertySheet>
       </step>
