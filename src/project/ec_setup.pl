@@ -1,4 +1,9 @@
 # promote/demote action
+printf("Promoting EC-Zendesk\n");
+printf("Action: $upgardeAction\n");
+printf("pluginName: $pluginName\n");
+printf("OTHER pluginName: $otherPluginName\n");
+
 # upgrade/prmote action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander->newBatch();
