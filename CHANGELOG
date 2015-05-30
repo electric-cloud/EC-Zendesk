@@ -1,7 +1,5 @@
 2015-05-29 System Administrator <lrochette@electric-cloud.com>
   * 1.2.0.91: Fix Issue #33: move credential upon promotion
-
-2015-05-29 System Administrator <lrochette@electric-cloud.com>
   * 1.2.0.88: Added deleteConfiguration
 
 2015-05-27 System Administrator <lrochette@electric-cloud.com>
