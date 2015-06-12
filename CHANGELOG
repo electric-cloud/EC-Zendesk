@@ -1,3 +1,6 @@
+2015-06-12 System Administrator <lrochette@electric-cloud.com>
+  * 1.2.0.101: Fixed ec_setup expansion issue
+
 2015-05-29 System Administrator <lrochette@electric-cloud.com>
   * 1.2.0.91: Fix Issue #33: move credential upon promotion
   * 1.2.0.88: Added deleteConfiguration
