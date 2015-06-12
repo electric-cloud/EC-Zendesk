@@ -68,13 +68,13 @@ Nikhil and Laurent won "&lt;b>Best in Show&lt;/b>" at the Citrix Synergy 2015 co
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.98/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.99/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.2.0.98&lt;/p>
+&lt;p>Plugin Version 1.0.0.99&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -86,7 +86,7 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>98</value>
+        <value>99</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -285,7 +285,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.2.0.98</value></property></propertySheet>
+</value></property><property><propertyName>project_version</propertyName><value>1.0.0.99</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -531,7 +531,7 @@ my $data = encode_json(\%data);
 # Note: the current version of the LWP::UserAGent package does not support the put method
 #       therefore we have to use the POST metod from the HTTP::Request::Common package
 #       However this package seems to have issue with put request containing data so the trick
-#       is to create a POST request with the data and then chenge it to PUT
+#       is to create a POST request with the data and then change it to PUT
 
 #my $req = PUT $URL, Content => $data; #;
 my $req = POST($URL, 'Content-Type' => 'application/json', 'Content' => $data);

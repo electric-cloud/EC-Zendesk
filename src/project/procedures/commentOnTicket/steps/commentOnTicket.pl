@@ -49,7 +49,7 @@ my $data = encode_json(\%data);
 # Note: the current version of the LWP::UserAGent package does not support the put method
 #       therefore we have to use the POST metod from the HTTP::Request::Common package
 #       However this package seems to have issue with put request containing data so the trick
-#       is to create a POST request with the data and then chenge it to PUT
+#       is to create a POST request with the data and then change it to PUT
 
 #my $req = PUT $URL, Content => $data; #;
 my $req = POST($URL, 'Content-Type' => 'application/json', 'Content' => $data);
