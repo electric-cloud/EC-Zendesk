@@ -87,18 +87,13 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>99</value>
+        <value>101</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
         <description/>
         <expandable>0</expandable>
-        <value>printf("Promoting EC-Zendesk\n");
-printf("Action: $upgardeAction\n");
-printf("pluginName: $pluginName\n");
-printf("OTHER pluginName: $otherPluginName\n");
-
-# upgrade/prmote action
+        <value># upgrade action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander-&gt;newBatch();
     my $newcfg = $query-&gt;getProperty(
@@ -193,7 +188,7 @@ History:
         <expandable>1</expandable>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>@PLUGIN_VERSION@</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>@PLUGIN_VERSION@</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>

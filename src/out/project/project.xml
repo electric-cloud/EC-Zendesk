@@ -68,13 +68,13 @@ Nikhil and Laurent won "&lt;b>Best in Show&lt;/b>" at the Citrix Synergy 2015 co
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.99/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.101/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-&lt;p>Plugin Version 1.0.0.99&lt;/p>
+&lt;p>Plugin Version 1.2.0.101&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -86,18 +86,13 @@ interact with Zendesk.&lt;/p>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>99</value>
+        <value>101</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
         <description />
         <expandable>0</expandable>
-        <value>printf("Promoting EC-Zendesk\n");
-printf("Action: $upgardeAction\n");
-printf("pluginName: $pluginName\n");
-printf("OTHER pluginName: $otherPluginName\n");
-
-# upgrade/prmote action
+        <value># upgrade action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander->newBatch();
     my $newcfg = $query->getProperty(
@@ -193,12 +188,7 @@ History:
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
     <property><propertyName>ec_setup</propertyName><value># promote/demote action
-printf("Promoting EC-Zendesk\n");
-printf("Action: $upgardeAction\n");
-printf("pluginName: $pluginName\n");
-printf("OTHER pluginName: $otherPluginName\n");
-
-# upgrade/prmote action
+# upgrade action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander->newBatch();
     my $newcfg = $query->getProperty(
@@ -285,7 +275,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value></property><property><propertyName>project_version</propertyName><value>1.0.0.99</value></property></propertySheet>
+</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.0.101</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>

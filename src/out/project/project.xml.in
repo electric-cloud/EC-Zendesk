@@ -69,13 +69,13 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 &lt;head&gt;
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" /&gt;
     &lt;title&gt;EC-Zendesk Plugin&lt;/title&gt;
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.0.0.99/pluginhelp.css" type="text/css" media= "screen" /&gt;
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.101/pluginhelp.css" type="text/css" media= "screen" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
     &lt;div class="help"&gt;
         &lt;h1&gt;EC-Zendesk&lt;/h1&gt;
-&lt;p&gt;Plugin Version 1.0.0.99&lt;/p&gt;
+&lt;p&gt;Plugin Version 1.2.0.101&lt;/p&gt;
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" /&gt;
 
         &lt;p&gt;EC-Zendesk is a collection of procedures to help you
@@ -87,18 +87,13 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>99</value>
+        <value>101</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
         <description/>
         <expandable>0</expandable>
-        <value>printf("Promoting EC-Zendesk\n");
-printf("Action: $upgardeAction\n");
-printf("pluginName: $pluginName\n");
-printf("OTHER pluginName: $otherPluginName\n");
-
-# upgrade/prmote action
+        <value># upgrade action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander-&gt;newBatch();
     my $newcfg = $query-&gt;getProperty(
@@ -193,7 +188,7 @@ History:
         <expandable>1</expandable>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value></property><property><propertyName>project_version</propertyName><value>1.0.0.99</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.0.101</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
