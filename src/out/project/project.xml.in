@@ -69,13 +69,13 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 &lt;head&gt;
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" /&gt;
     &lt;title&gt;EC-Zendesk Plugin&lt;/title&gt;
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.101/pluginhelp.css" type="text/css" media= "screen" /&gt;
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.0.102/pluginhelp.css" type="text/css" media= "screen" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
     &lt;div class="help"&gt;
         &lt;h1&gt;EC-Zendesk&lt;/h1&gt;
-&lt;p&gt;Plugin Version 1.2.0.101&lt;/p&gt;
+&lt;p&gt;Plugin Version 1.2.0.102&lt;/p&gt;
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" /&gt;
 
         &lt;p&gt;EC-Zendesk is a collection of procedures to help you
@@ -87,7 +87,7 @@ interact with Zendesk.&lt;/p&gt;
       <property>
         <propertyName>pluginBuildNumber</propertyName>
         <expandable>1</expandable>
-        <value>101</value>
+        <value>102</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -188,7 +188,7 @@ History:
         <expandable>1</expandable>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.0.101</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.0.102</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>

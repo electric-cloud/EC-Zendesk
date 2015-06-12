@@ -5,20 +5,20 @@
 
   <!-- Plugin-specific properties -->
   <property name="pluginKey" value="EC-Zendesk" />
-  <property name="pluginVersion" value="1.2.0.101" />
+  <property name="pluginVersion" value="1.2.0.102" />
 
   
   <!-- Java code specific properties -->
   <property name="gwtModules" value="ecplugins.Zendesk.ConfigurationManagement" />
   <path id="extras">
     <pathelement location="/opt/electriccloud/CommanderSDK/lib/commander-client.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/ec_internal.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/gin-2.1.1.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/gwtp-all-0.8-PATCH5.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/javax.inject.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/guice-assistedinject.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/guice.jar"/>
-    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin/lib/annotations.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/ec_internal.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/gin-2.1.1.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/gwtp-all-0.8-PATCH5.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/javax.inject.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/guice-assistedinject.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/guice.jar"/>
+    <pathelement location="/opt/electriccloud/electriccommander/plugins/EC-Admin-2.9.2.292/lib/annotations.jar"/>
 
   </path>
   <property name="gwt.path.extras" value="extras" />
