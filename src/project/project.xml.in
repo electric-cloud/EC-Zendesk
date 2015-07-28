@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<exportedData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="commander.xsd" version="61" buildLabel="build_4.2_77824_2014.09.27_02:09:10" buildVersion="4.2.6.77824" passkey="a30cbf89cfdae202c5227ce40fe867512295566d">
+<exportedData version="69" buildLabel="build_main_89270_2015.04.16_07:48:51" buildVersion="5.4.0.89270" passkey="5988fd40f08f691b7b3605f17301cfc761659b8f">
   <exportPath>/projects/@PLUGIN_KEY@</exportPath>
   <project>
     <projectName>@PLUGIN_KEY@</projectName>
@@ -7,14 +7,20 @@
 Plugin to interact with Zendesk. Originally developed for the &lt;a html="http://citrixapps.challengepost.com/submissions"&gt;Citrix Hackathon&lt;/a&gt;.&lt;br/&gt;
 Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2015 conference for this project.&lt;/html&gt;</description>
     <resourceName/>
+    <tracked>0</tracked>
     <workspaceName/>
     <propertySheet>
+      <tracked>0</tracked>
       <property>
         <propertyName>ui_forms</propertyName>
+        <tracked>0</tracked>
         <propertySheet>
+          <tracked>0</tracked>
           <property>
             <propertyName>createConfigForm</propertyName>
+            <counter>0</counter>
             <expandable>1</expandable>
+            <tracked>0</tracked>
             <value>&lt;editor&gt;
     &lt;formElement&gt;
         &lt;type&gt;entry&lt;/type&gt;
@@ -34,7 +40,9 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
           </property>
           <property>
             <propertyName>editConfigForm</propertyName>
+            <counter>0</counter>
             <expandable>1</expandable>
+            <tracked>0</tracked>
             <value>&lt;editor&gt;
         &lt;formElement&gt;
         &lt;type&gt;credential&lt;/type&gt;
@@ -49,19 +57,25 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
       </property>
       <property>
         <propertyName>configureCredentials</propertyName>
+        <counter>0</counter>
         <description/>
         <expandable>1</expandable>
+        <tracked>0</tracked>
         <value>1</value>
       </property>
       <property>
         <propertyName>ec_visibility</propertyName>
+        <counter>0</counter>
         <expandable>1</expandable>
+        <tracked>0</tracked>
         <value>pickListOnly</value>
       </property>
       <property>
         <propertyName>help</propertyName>
+        <counter>0</counter>
         <description/>
         <expandable>1</expandable>
+        <tracked>0</tracked>
         <value>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
 
@@ -86,13 +100,17 @@ interact with Zendesk.&lt;/p&gt;
       </property>
       <property>
         <propertyName>pluginBuildNumber</propertyName>
+        <counter>0</counter>
         <expandable>1</expandable>
-        <value>102</value>
+        <tracked>0</tracked>
+        <value>104</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
+        <counter>0</counter>
         <description/>
         <expandable>0</expandable>
+        <tracked>0</tracked>
         <value># upgrade action
 if ($upgradeAction eq "upgrade") {
     my $query = $commander-&gt;newBatch();
@@ -166,12 +184,16 @@ if ($upgradeAction eq "upgrade") {
       </property>
       <property>
         <propertyName>version</propertyName>
+        <counter>0</counter>
         <description>Version of the EC-Zendesk project
 
 History:
+- version 1.2.1
+    + Moved to EC 5.4 environment
+
 - version 1.2.0
     + Added credential configuration deletion
-    +Added ec_setup.pl code to move existing credentials
+    + Added ec_setup.pl code to move existing credentials
 
 - version 1.1.0
     + Added credential configuration management
@@ -180,12 +202,15 @@ History:
     + initial version created for the Citrix hackathon
 </description>
         <expandable>1</expandable>
-        <value>1.2.0</value>
+        <tracked>0</tracked>
+        <value>1.2.1</value>
       </property>
       <property>
         <propertyName>zendeskURL</propertyName>
+        <counter>0</counter>
         <description/>
         <expandable>1</expandable>
+        <tracked>0</tracked>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
     <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>@PLUGIN_VERSION@</value></property></propertySheet>
@@ -196,150 +221,212 @@ History:
       <resourceName/>
       <timeLimit/>
       <timeLimitUnits>minutes</timeLimitUnits>
+      <tracked>0</tracked>
       <workspaceName/>
       <propertySheet>
+        <tracked>0</tracked>
         <property>
           <propertyName>ec_customEditorData</propertyName>
+          <tracked>0</tracked>
           <propertySheet>
+            <tracked>0</tracked>
             <property>
               <propertyName>parameters</propertyName>
+              <tracked>0</tracked>
               <propertySheet>
+                <tracked>0</tracked>
                 <property>
                   <propertyName>Title</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>comment</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>credential</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>product</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>options</propertyName>
+                      <tracked>0</tracked>
                       <propertySheet>
+                        <tracked>0</tracked>
                         <property>
                           <propertyName>option1</propertyName>
+                          <tracked>0</tracked>
                           <propertySheet>
+                            <tracked>0</tracked>
                             <property>
                               <propertyName>text</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>ElectricCommander</value>
                             </property>
                             <property>
                               <propertyName>value</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>electriccommander</value>
                             </property>
                           </propertySheet>
                         </property>
                         <property>
                           <propertyName>option2</propertyName>
+                          <tracked>0</tracked>
                           <propertySheet>
+                            <tracked>0</tracked>
                             <property>
                               <propertyName>text</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>ElectricFlow</value>
                             </property>
                             <property>
                               <propertyName>value</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>electricflow</value>
                             </property>
                           </propertySheet>
                         </property>
                         <property>
                           <propertyName>list</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>ElectricCommander|ElectricFlow</value>
                         </property>
                         <property>
                           <propertyName>optionCount</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>2</value>
                         </property>
                         <property>
                           <propertyName>type</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>list</value>
                         </property>
                       </propertySheet>
                     </property>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketBody</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketDescription</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketNumber</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketSubject</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>zendeskURL</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
@@ -350,8 +437,10 @@ History:
         </property>
         <property>
           <propertyName>exposeToPlugin</propertyName>
+          <counter>0</counter>
           <description/>
           <expandable>1</expandable>
+          <tracked>0</tracked>
           <value>1</value>
         </property>
       </propertySheet>
@@ -361,6 +450,7 @@ History:
         <description>The comment you want to add to the ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>textarea</type>
       </formalParameter>
       <formalParameter>
@@ -369,6 +459,7 @@ History:
         <description>Name of the credential to use to log into Zendesk</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <formalParameter>
@@ -377,6 +468,7 @@ History:
         <description>The Zendesk ticket number to add a comment on</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <step>
@@ -397,28 +489,34 @@ History:
         <shell>ec-perl</shell>
         <timeLimit/>
         <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
         <workingDirectory/>
         <workspaceName/>
         <propertySheet>
+          <tracked>0</tracked>
         </propertySheet>
       </step>
     </procedure>
     <procedure>
       <procedureName>createConfiguration</procedureName>
       <description>Created by EC-Admin to manage credential configuration</description>
+      <tracked>0</tracked>
       <propertySheet>
+        <tracked>0</tracked>
       </propertySheet>
       <formalParameter>
         <formalParameterName>config</formalParameterName>
         <description>Configuration Name</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <formalParameter>
         <formalParameterName>credential</formalParameterName>
         <expansionDeferred>0</expansionDeferred>
         <required>0</required>
+        <tracked>0</tracked>
         <type>credential</type>
       </formalParameter>
       <step>
@@ -435,7 +533,9 @@ History:
         <shell>ec-perl</shell>
         <timeLimit>5</timeLimit>
         <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
         <propertySheet>
+          <tracked>0</tracked>
         </propertySheet>
       </step>
       <step>
@@ -456,9 +556,11 @@ History:
         <shell>ec-perl</shell>
         <timeLimit/>
         <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
         <workingDirectory/>
         <workspaceName/>
         <propertySheet>
+          <tracked>0</tracked>
         </propertySheet>
         <attachedParameters>
           <formalParameterName>credential</formalParameterName>
@@ -472,140 +574,198 @@ History:
       <resourceName/>
       <timeLimit/>
       <timeLimitUnits>minutes</timeLimitUnits>
+      <tracked>0</tracked>
       <workspaceName/>
       <propertySheet>
+        <tracked>0</tracked>
         <property>
           <propertyName>ec_customEditorData</propertyName>
+          <tracked>0</tracked>
           <propertySheet>
+            <tracked>0</tracked>
             <property>
               <propertyName>parameters</propertyName>
+              <tracked>0</tracked>
               <propertySheet>
+                <tracked>0</tracked>
                 <property>
                   <propertyName>Title</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>credential</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>product</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>options</propertyName>
+                      <tracked>0</tracked>
                       <propertySheet>
+                        <tracked>0</tracked>
                         <property>
                           <propertyName>option1</propertyName>
+                          <tracked>0</tracked>
                           <propertySheet>
+                            <tracked>0</tracked>
                             <property>
                               <propertyName>text</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>ElectricCommander</value>
                             </property>
                             <property>
                               <propertyName>value</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>electriccommander</value>
                             </property>
                           </propertySheet>
                         </property>
                         <property>
                           <propertyName>option2</propertyName>
+                          <tracked>0</tracked>
                           <propertySheet>
+                            <tracked>0</tracked>
                             <property>
                               <propertyName>text</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>ElectricFlow</value>
                             </property>
                             <property>
                               <propertyName>value</propertyName>
+                              <counter>0</counter>
                               <expandable>1</expandable>
+                              <tracked>0</tracked>
                               <value>electricflow</value>
                             </property>
                           </propertySheet>
                         </property>
                         <property>
                           <propertyName>list</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>ElectricCommander|ElectricFlow</value>
                         </property>
                         <property>
                           <propertyName>optionCount</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>2</value>
                         </property>
                         <property>
                           <propertyName>type</propertyName>
+                          <counter>0</counter>
                           <expandable>1</expandable>
+                          <tracked>0</tracked>
                           <value>list</value>
                         </property>
                       </propertySheet>
                     </property>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketBody</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketDescription</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>ticketSubject</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>version</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
                 </property>
                 <property>
                   <propertyName>zendeskURL</propertyName>
+                  <tracked>0</tracked>
                   <propertySheet>
+                    <tracked>0</tracked>
                     <property>
                       <propertyName>formType</propertyName>
+                      <counter>0</counter>
                       <expandable>1</expandable>
+                      <tracked>0</tracked>
                       <value>standard</value>
                     </property>
                   </propertySheet>
@@ -616,8 +776,10 @@ History:
         </property>
         <property>
           <propertyName>exposeToPlugin</propertyName>
+          <counter>0</counter>
           <description/>
           <expandable>1</expandable>
+          <tracked>0</tracked>
           <value>1</value>
         </property>
       </propertySheet>
@@ -627,6 +789,7 @@ History:
         <description>Name of the credential to use to log into Zendesk</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <formalParameter>
@@ -635,6 +798,7 @@ History:
         <description>The name of the product for which you want to open a ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>select</type>
       </formalParameter>
       <formalParameter>
@@ -643,6 +807,7 @@ History:
         <description>The full description of your issue to add to your ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>textarea</type>
       </formalParameter>
       <formalParameter>
@@ -651,6 +816,7 @@ History:
         <description>The subject of your ticket</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <formalParameter>
@@ -659,6 +825,7 @@ History:
         <description>Product version</description>
         <expansionDeferred>0</expansionDeferred>
         <required>0</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <step>
@@ -679,22 +846,27 @@ History:
         <shell>ec-perl</shell>
         <timeLimit/>
         <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
         <workingDirectory/>
         <workspaceName/>
         <propertySheet>
+          <tracked>0</tracked>
         </propertySheet>
       </step>
     </procedure>
     <procedure>
       <procedureName>DeleteConfiguration</procedureName>
       <description>Created by EC-Admin to manage credential configuration</description>
+      <tracked>0</tracked>
       <propertySheet>
+        <tracked>0</tracked>
       </propertySheet>
       <formalParameter>
         <formalParameterName>config</formalParameterName>
         <description>Configuration Name</description>
         <expansionDeferred>0</expansionDeferred>
         <required>1</required>
+        <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
       <step>
@@ -711,7 +883,9 @@ History:
         <shell>ec-perl</shell>
         <timeLimit>5</timeLimit>
         <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
         <propertySheet>
+          <tracked>0</tracked>
         </propertySheet>
       </step>
     </procedure>

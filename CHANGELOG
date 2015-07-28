@@ -1,3 +1,6 @@
+2015-07-28 System Administrator <>
+  * 1.2.1.104: Issue #1: moving to EC5.4 environment
+
 2015-06-12 System Administrator <lrochette@electric-cloud.com>
   * 1.2.0.101: Fixed ec_setup expansion issue
 
