@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.2.1.104</version>
+  <version>1.2.1.119</version>
   <label>EC-Zendesk</label>
-  <description>Integrates Zendesk ticketing system into Electric Commander.
-2015-07-28 admin Issue #1: moving to EC5.4 environment</description>
+  <description>Integrates Zendesk ticketing system into Electric Commander.</description>
   <help>help.xml</help>
   <author>L. Rochette</author>
   <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>
 
-  <commander-version min="4.1"/>
+  <commander-version min="5.4"/>
 
   <configure>configurations.xml</configure>
   <components>

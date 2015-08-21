@@ -1,9 +1,9 @@
 <page>
   <componentContainer>
     <title>Edit EC-Zendesk Configuration</title>
-    <helpLink>/pages/EC-Zendesk-1.2.1.104/help</helpLink>
+    <helpLink>/pages/EC-Zendesk-1.2.1.119/help</helpLink>
     <component plugin="EC-Zendesk"
-               version="1.2.1.104"
+               version="1.2.1.119"
                ref="ConfigurationManagement">
         <panel>edit</panel>
     </component>
