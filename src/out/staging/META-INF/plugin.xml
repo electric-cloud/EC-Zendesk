@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin>
   <key>EC-Zendesk</key>
-  <version>1.2.2.126</version>
+  <version>1.2.2.127</version>
   <label>EC-Zendesk</label>
   <description>Integrates Zendesk ticketing system into Electric Commander.</description>
   <help>help.xml</help>

@@ -82,32 +82,32 @@ Nikhil and Laurent won "&lt;b>Best in Show&lt;/b>" at the Citrix Synergy 2015 co
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.2.126/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.2.127/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-		&lt;p>Plugin Version 1.2.2.126&lt;/p>
+		&lt;p>Plugin Version 1.2.2.127&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
 interact with Zendesk.&lt;/p>
 		&lt;h2>ElectricFlow Integration to Zendesk&lt;/h2>
 
-		&lt;p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support UI for ElectricCloud. This is not intended as a generic Zendesk conenctor.&lt;/p>
+		&lt;p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.&lt;/p>
 
 		&lt;h1>Plugin Procedures&lt;/h1>
 
-    &lt;p>
-        IMPORTANT: For all parameter descriptions below, required
-        parameters are shown in &lt;span class="required">bold
-        italics&lt;/span>.
-    &lt;/p>
+	    &lt;p>
+	        IMPORTANT: For all parameter descriptions below, required
+	        parameters are shown in &lt;span class="required">bold
+	        italics&lt;/span>.
+	    &lt;/p>
 
-    &lt;div id="CreateConfiguration">&lt;a name="CreateConfiguration" id="CreateConfiguration">&lt;/a>
+	    &lt;div id="CreateConfiguration">&lt;a name="CreateConfiguration" id="CreateConfiguration">&lt;/a>
     
-    &lt;h2>Plugin Configuration&lt;/h2>
+    	&lt;h2>Plugin Configuration&lt;/h2>
 
         &lt;p>
         Plugin configurations are sets of parameters that apply
@@ -122,40 +122,50 @@ interact with Zendesk.&lt;/p>
         sub-tab. On the right side of the line for the specific
         plugin, there is a "Configure" link which will open the
         Configuration page.
-    &lt;/p>
+    	&lt;/p>
 
-    &lt;table class="grid">
-        &lt;thead>
-            &lt;tr>
-                &lt;th>Parameter&lt;/th>
+	    &lt;table class="grid">
+	        &lt;thead>
+	            &lt;tr>
+	                &lt;th>Parameter&lt;/th>
 
-                &lt;th>Description&lt;/th>
-            &lt;/tr>
-        &lt;/thead>
+	                &lt;th>Description&lt;/th>
+	            &lt;/tr>
+	        &lt;/thead>
 
-        &lt;tbody>
-            &lt;tr>
-                &lt;td class="required">Configuration Name&lt;/td>
+	        &lt;tbody>
+	            &lt;tr>
+	                &lt;td class="required">Configuration Name&lt;/td>
+	                &lt;td>Provide a unique name for the configuration.
+	                (Required)&lt;/td>
+	            &lt;/tr>
+	            &lt;tr>
+	                &lt;td class="required">User Name&lt;/td>
+	                &lt;td>Provide the user login ID. Remember that login
+	                IDs are case sensitive. (Required)&lt;/td>
+	            &lt;/tr>
+	            &lt;tr>
+	                &lt;td class="required">Password&lt;/td>
+	                &lt;td>Provide the user-specified password.
+	                (Required)&lt;/td>
+	            &lt;/tr>
+	        &lt;/tbody>
+    	&lt;/table>
+    	&lt;img src="../../plugins/EC-Zendesk/images/help/configuration.png" alt="form" border="1"/>&lt;/div>
 
-                &lt;td>Provide a unique name for the configuration.
-                (Required)&lt;/td>
-            &lt;/tr>
+    	&lt;h2>createTicket&lt;/h2>
 
-            &lt;tr>
-                &lt;td class="required">User Name&lt;/td>
+    	&lt;p>This procedure is used to open a new Zendesk ticket. It is called
+    	automatically by &lt;a href="/commander/pages/EC-Support/help">EC-Support&lt;/a> 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.&lt;/p>
 
-                &lt;td>Provide the user login ID. Remember that login
-                IDs are case sensitive. (Required)&lt;/td>
-            &lt;/tr>
+		&lt;h2>commentOnTicket&lt;/h2>
 
-            &lt;tr>
-                &lt;td class="required">Password&lt;/td>
-
-                &lt;td>Provide the user-specified password.
-                (Required)&lt;/td>
-            &lt;/tr>
-        &lt;/tbody>
-    &lt;/table>&lt;img src="../../plugins/EC-Zendesk/images/help/configuration.png" alt="form" border="1"/>&lt;/div>
+    	&lt;p>This procedure is used to comment on an existing Zendesk ticket. It is called
+    	automatically by &lt;a href="/commander/pages/EC-Support/help">EC-Support&lt;/a> 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.&lt;/p>
 
 	&lt;/div>
 &lt;/body>
@@ -166,7 +176,7 @@ interact with Zendesk.&lt;/p>
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>126</value>
+        <value>127</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -368,7 +378,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.2.126</value></property></propertySheet>
+</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.2.127</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>

@@ -18,19 +18,19 @@
 interact with Zendesk.</p>
 		<h2>ElectricFlow Integration to Zendesk</h2>
 
-		<p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support UI for ElectricCloud. This is not intended as a generic Zendesk conenctor.</p>
+		<p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.</p>
 
 		<h1>Plugin Procedures</h1>
 
-    <p>
-        IMPORTANT: For all parameter descriptions below, required
-        parameters are shown in <span class="required">bold
-        italics</span>.
-    </p>
+	    <p>
+	        IMPORTANT: For all parameter descriptions below, required
+	        parameters are shown in <span class="required">bold
+	        italics</span>.
+	    </p>
 
-    <div id="CreateConfiguration"><a name="CreateConfiguration" id="CreateConfiguration"></a>
+	    <div id="CreateConfiguration"><a name="CreateConfiguration" id="CreateConfiguration"></a>
     
-    <h2>Plugin Configuration</h2>
+    	<h2>Plugin Configuration</h2>
 
         <p>
         Plugin configurations are sets of parameters that apply
@@ -45,40 +45,50 @@ interact with Zendesk.</p>
         sub-tab. On the right side of the line for the specific
         plugin, there is a "Configure" link which will open the
         Configuration page.
-    </p>
+    	</p>
 
-    <table class="grid">
-        <thead>
-            <tr>
-                <th>Parameter</th>
+	    <table class="grid">
+	        <thead>
+	            <tr>
+	                <th>Parameter</th>
 
-                <th>Description</th>
-            </tr>
-        </thead>
+	                <th>Description</th>
+	            </tr>
+	        </thead>
 
-        <tbody>
-            <tr>
-                <td class="required">Configuration Name</td>
+	        <tbody>
+	            <tr>
+	                <td class="required">Configuration Name</td>
+	                <td>Provide a unique name for the configuration.
+	                (Required)</td>
+	            </tr>
+	            <tr>
+	                <td class="required">User Name</td>
+	                <td>Provide the user login ID. Remember that login
+	                IDs are case sensitive. (Required)</td>
+	            </tr>
+	            <tr>
+	                <td class="required">Password</td>
+	                <td>Provide the user-specified password.
+	                (Required)</td>
+	            </tr>
+	        </tbody>
+    	</table>
+    	<img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" border="1"/></div>
 
-                <td>Provide a unique name for the configuration.
-                (Required)</td>
-            </tr>
+    	<h2>createTicket</h2>
 
-            <tr>
-                <td class="required">User Name</td>
+    	<p>This procedure is used to open a new Zendesk ticket. It is called
+    	automatically by <a href="/commander/pages/EC-Support/help">EC-Support</a> 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.</p>
 
-                <td>Provide the user login ID. Remember that login
-                IDs are case sensitive. (Required)</td>
-            </tr>
+		<h2>commentOnTicket</h2>
 
-            <tr>
-                <td class="required">Password</td>
-
-                <td>Provide the user-specified password.
-                (Required)</td>
-            </tr>
-        </tbody>
-    </table><img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" border="1"/></div>
+    	<p>This procedure is used to comment on an existing Zendesk ticket. It is called
+    	automatically by <a href="/commander/pages/EC-Support/help">EC-Support</a> 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.</p>
 
 	</div>
 </body>

@@ -96,19 +96,19 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 interact with Zendesk.&lt;/p&gt;
 		&lt;h2&gt;ElectricFlow Integration to Zendesk&lt;/h2&gt;
 
-		&lt;p&gt;The plugin interacts with the Zendesk REST API. It is tied at this moment with the support UI for ElectricCloud. This is not intended as a generic Zendesk conenctor.&lt;/p&gt;
+		&lt;p&gt;The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.&lt;/p&gt;
 
 		&lt;h1&gt;Plugin Procedures&lt;/h1&gt;
 
-    &lt;p&gt;
-        IMPORTANT: For all parameter descriptions below, required
-        parameters are shown in &lt;span class="required"&gt;bold
-        italics&lt;/span&gt;.
-    &lt;/p&gt;
+	    &lt;p&gt;
+	        IMPORTANT: For all parameter descriptions below, required
+	        parameters are shown in &lt;span class="required"&gt;bold
+	        italics&lt;/span&gt;.
+	    &lt;/p&gt;
 
-    &lt;div id="CreateConfiguration"&gt;&lt;a name="CreateConfiguration" id="CreateConfiguration"&gt;&lt;/a&gt;
+	    &lt;div id="CreateConfiguration"&gt;&lt;a name="CreateConfiguration" id="CreateConfiguration"&gt;&lt;/a&gt;
     
-    &lt;h2&gt;Plugin Configuration&lt;/h2&gt;
+    	&lt;h2&gt;Plugin Configuration&lt;/h2&gt;
 
         &lt;p&gt;
         Plugin configurations are sets of parameters that apply
@@ -123,40 +123,50 @@ interact with Zendesk.&lt;/p&gt;
         sub-tab. On the right side of the line for the specific
         plugin, there is a "Configure" link which will open the
         Configuration page.
-    &lt;/p&gt;
+    	&lt;/p&gt;
 
-    &lt;table class="grid"&gt;
-        &lt;thead&gt;
-            &lt;tr&gt;
-                &lt;th&gt;Parameter&lt;/th&gt;
+	    &lt;table class="grid"&gt;
+	        &lt;thead&gt;
+	            &lt;tr&gt;
+	                &lt;th&gt;Parameter&lt;/th&gt;
 
-                &lt;th&gt;Description&lt;/th&gt;
-            &lt;/tr&gt;
-        &lt;/thead&gt;
+	                &lt;th&gt;Description&lt;/th&gt;
+	            &lt;/tr&gt;
+	        &lt;/thead&gt;
 
-        &lt;tbody&gt;
-            &lt;tr&gt;
-                &lt;td class="required"&gt;Configuration Name&lt;/td&gt;
+	        &lt;tbody&gt;
+	            &lt;tr&gt;
+	                &lt;td class="required"&gt;Configuration Name&lt;/td&gt;
+	                &lt;td&gt;Provide a unique name for the configuration.
+	                (Required)&lt;/td&gt;
+	            &lt;/tr&gt;
+	            &lt;tr&gt;
+	                &lt;td class="required"&gt;User Name&lt;/td&gt;
+	                &lt;td&gt;Provide the user login ID. Remember that login
+	                IDs are case sensitive. (Required)&lt;/td&gt;
+	            &lt;/tr&gt;
+	            &lt;tr&gt;
+	                &lt;td class="required"&gt;Password&lt;/td&gt;
+	                &lt;td&gt;Provide the user-specified password.
+	                (Required)&lt;/td&gt;
+	            &lt;/tr&gt;
+	        &lt;/tbody&gt;
+    	&lt;/table&gt;
+    	&lt;img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" border="1"/&gt;&lt;/div&gt;
 
-                &lt;td&gt;Provide a unique name for the configuration.
-                (Required)&lt;/td&gt;
-            &lt;/tr&gt;
+    	&lt;h2&gt;createTicket&lt;/h2&gt;
 
-            &lt;tr&gt;
-                &lt;td class="required"&gt;User Name&lt;/td&gt;
+    	&lt;p&gt;This procedure is used to open a new Zendesk ticket. It is called
+    	automatically by &lt;a href="/commander/pages/EC-Support/help"&gt;EC-Support&lt;/a&gt; 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.&lt;/p&gt;
 
-                &lt;td&gt;Provide the user login ID. Remember that login
-                IDs are case sensitive. (Required)&lt;/td&gt;
-            &lt;/tr&gt;
+		&lt;h2&gt;commentOnTicket&lt;/h2&gt;
 
-            &lt;tr&gt;
-                &lt;td class="required"&gt;Password&lt;/td&gt;
-
-                &lt;td&gt;Provide the user-specified password.
-                (Required)&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/tbody&gt;
-    &lt;/table&gt;&lt;img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" border="1"/&gt;&lt;/div&gt;
+    	&lt;p&gt;This procedure is used to comment on an existing Zendesk ticket. It is called
+    	automatically by &lt;a href="/commander/pages/EC-Support/help"&gt;EC-Support&lt;/a&gt; 
+    	plugins and is not designed to be used directly but nothing prevents 
+    	you to encapsulate it in your own process if you so desire.&lt;/p&gt;
 
 	&lt;/div&gt;
 &lt;/body&gt;
@@ -167,7 +177,7 @@ interact with Zendesk.&lt;/p&gt;
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>126</value>
+        <value>127</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
