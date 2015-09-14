@@ -87,7 +87,7 @@ sub main() {
 ################################
 sub getCfgList {
 
-    my $gcfg = new ElectricCommander::PropDB($::ec,"/projects/EC-Zendesk-1.2.1.123/plugin_cfgs");
+    my $gcfg = new ElectricCommander::PropDB($::ec,"/projects/EC-Zendesk-1.2.2.124/plugin_cfgs");
 
     my %cfgs = $gcfg->getRows();
     # print results as XML block
