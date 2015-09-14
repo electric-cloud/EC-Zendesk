@@ -78,7 +78,7 @@ interact with Zendesk.</p>
                 (Required)</td>
             </tr>
         </tbody>
-    </table><img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" /></div>
+    </table><img src="../../plugins/@PLUGIN_KEY@/images/help/configuration.png" alt="form" border="1"/></div>
 
 	</div>
 </body>

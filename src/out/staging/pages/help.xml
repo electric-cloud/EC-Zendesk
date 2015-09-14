@@ -5,13 +5,13 @@
 <head>
     <meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     <title>EC-Zendesk Plugin</title>
-    <link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.2.124/pluginhelp.css" type="text/css" media= "screen" />
+    <link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.2.125/pluginhelp.css" type="text/css" media= "screen" />
 </head>
 
 <body>
     <div class="help">
         <h1>EC-Zendesk</h1>
-		<p>Plugin Version 1.2.2.124</p>
+		<p>Plugin Version 1.2.2.125</p>
         <hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         <p>EC-Zendesk is a collection of procedures to help you
@@ -78,7 +78,7 @@ interact with Zendesk.</p>
                 (Required)</td>
             </tr>
         </tbody>
-    </table><img src="../../plugins/EC-Zendesk/images/help/configuration.png" alt="form" /></div>
+    </table><img src="../../plugins/EC-Zendesk/images/help/configuration.png" alt="form" border="1"/></div>
 
 	</div>
 </body>
