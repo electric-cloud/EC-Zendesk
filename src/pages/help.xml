@@ -16,6 +16,8 @@
 
         <p>EC-Zendesk is a collection of procedures to help you
 interact with Zendesk.</p>
+		<p><b>Note:</b> this plugin was part of the bundle who helped Laurent Rochette and Nikhil Vaze won "Best in Show" at the Citrix Synergy 2015 conference.</p>
+
 		<h2>ElectricFlow Integration to Zendesk</h2>
 
 		<p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.</p>
@@ -79,13 +81,6 @@ interact with Zendesk.</p>
     	<h2>createTicket</h2>
 
     	<p>This procedure is used to open a new Zendesk ticket. It is called
-    	automatically by <a href="/commander/pages/EC-Support/help">EC-Support</a> 
-    	plugins and is not designed to be used directly but nothing prevents 
-    	you to encapsulate it in your own process if you so desire.</p>
-
-		<h2>commentOnTicket</h2>
-
-    	<p>This procedure is used to comment on an existing Zendesk ticket. It is called
     	automatically by <a href="/commander/pages/EC-Support/help">EC-Support</a> 
     	plugins and is not designed to be used directly but nothing prevents 
     	you to encapsulate it in your own process if you so desire.</p>

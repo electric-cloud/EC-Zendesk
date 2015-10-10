@@ -1,0 +1,671 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 4194304 bytes for committing reserved memory.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_linux.cpp:2671), pid=11327, tid=140684811364096
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_25-b17) (build 1.8.0_25-b17)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.25-b02 mixed mode linux-amd64 compressed oops)
+# Core dump written. Default location: /home/lrochette/GitHub/EC-Zendesk/src/core or core.11327
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007ff3cc073800):  VMThread [stack: 0x00007ff3bc24e000,0x00007ff3bc34f000] [id=11336]
+
+Stack: [0x00007ff3bc24e000,0x00007ff3bc34f000],  sp=0x00007ff3bc34d140,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xa7923a]  VMError::report_and_die()+0x2ca
+V  [libjvm.so+0x4e552b]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x8b
+V  [libjvm.so+0x8e5613]  os::Linux::commit_memory_impl(char*, unsigned long, bool)+0x103
+V  [libjvm.so+0x8e5b69]  os::pd_commit_memory(char*, unsigned long, unsigned long, bool)+0x29
+V  [libjvm.so+0x8df83a]  os::commit_memory(char*, unsigned long, unsigned long, bool)+0x2a
+V  [libjvm.so+0x94f923]  PSVirtualSpace::expand_by(unsigned long)+0x53
+V  [libjvm.so+0x950d28]  PSYoungGen::resize_generation(unsigned long, unsigned long)+0xf8
+V  [libjvm.so+0x94fe82]  PSYoungGen::resize(unsigned long, unsigned long)+0x22
+V  [libjvm.so+0x94d163]  PSScavenge::invoke_no_policy()+0xf53
+V  [libjvm.so+0x94d8e1]  PSScavenge::invoke()+0x41
+V  [libjvm.so+0x907800]  ParallelScavengeHeap::failed_mem_allocate(unsigned long)+0x70
+V  [libjvm.so+0xa7a8b7]  VM_ParallelGCFailedAllocation::doit()+0x97
+V  [libjvm.so+0xa81fd5]  VM_Operation::evaluate()+0x55
+V  [libjvm.so+0xa803aa]  VMThread::evaluate_operation(VM_Operation*)+0xba
+V  [libjvm.so+0xa8072e]  VMThread::loop()+0x1ce
+V  [libjvm.so+0xa80ba0]  VMThread::run()+0x70
+V  [libjvm.so+0x8e7d48]  java_start(Thread*)+0x108
+
+VM_Operation (0x00007ff3b54d52c0): ParallelGCFailedAllocation, mode: safepoint, requested by thread 0x00007ff3cc2ac000
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007ff3cc2ac000 JavaThread "In-process PermutationWorker 0" [_thread_blocked, id=11362, stack(0x00007ff3b53d6000,0x00007ff3b54d7000)]
+  0x00007ff3cc80f000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=11351, stack(0x00007ff3b726f000,0x00007ff3b7370000)]
+  0x00007ff378076800 JavaThread "Timer-0" daemon [_thread_blocked, id=11346, stack(0x00007ff3b716e000,0x00007ff3b726f000)]
+  0x00007ff3cc0b3800 JavaThread "Service Thread" daemon [_thread_blocked, id=11343, stack(0x00007ff3b7832000,0x00007ff3b7933000)]
+  0x00007ff3cc0b1000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=11342, stack(0x00007ff3b7933000,0x00007ff3b7a34000)]
+  0x00007ff3cc0af000 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=11341, stack(0x00007ff3b7a34000,0x00007ff3b7b35000)]
+  0x00007ff3cc0ac000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=11340, stack(0x00007ff3b7b35000,0x00007ff3b7c36000)]
+  0x00007ff3cc0aa000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=11339, stack(0x00007ff3b7c36000,0x00007ff3b7d37000)]
+  0x00007ff3cc07c800 JavaThread "Finalizer" daemon [_thread_blocked, id=11338, stack(0x00007ff3bc04c000,0x00007ff3bc14d000)]
+  0x00007ff3cc07a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=11337, stack(0x00007ff3bc14d000,0x00007ff3bc24e000)]
+  0x00007ff3cc00a800 JavaThread "main" [_thread_blocked, id=11331, stack(0x00007ff3d4d18000,0x00007ff3d4e19000)]
+
+Other Threads:
+=>0x00007ff3cc073800 VMThread [stack: 0x00007ff3bc24e000,0x00007ff3bc34f000] [id=11336]
+  0x00007ff3cc0ba800 WatcherThread [stack: 0x00007ff3b7731000,0x00007ff3b7832000] [id=11344]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ff3cc0069b0] Threads_lock - owner thread: 0x00007ff3cc073800
+[0x00007ff3cc006eb0] Heap_lock - owner thread: 0x00007ff3cc2ac000
+
+Heap:
+ PSYoungGen      total 55808K, used 23391K [0x00000000fab00000, 0x00000000ffc00000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 26112K, 89% used [0x00000000fe280000,0x00000000ff957f18,0x00000000ffc00000)
+  to   space 25088K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe080000)
+ ParOldGen       total 175104K, used 110597K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6c01400,0x00000000fab00000)
+ Metaspace       used 29280K, capacity 29962K, committed 30208K, reserved 1077248K
+  class space    used 2890K, capacity 3037K, committed 3072K, reserved 1048576K
+
+Card table byte_map: [0x00007ff3d4c97000,0x00007ff3d4d18000] byte_map_base: 0x00007ff3d4517000
+
+Marking Bits: (ParMarkBitMap*) 0x00007ff3d41fa2c0
+ Begin Bits: [0x00007ff3d0f46000, 0x00007ff3d1346000)
+ End Bits:   [0x00007ff3d1346000, 0x00007ff3d1746000)
+
+Polling page: 0x00007ff3d4e3a000
+
+CodeCache: size=245760Kb used=34016Kb max_used=34090Kb free=211743Kb
+ bounds [0x00007ff3bd000000, 0x00007ff3bf180000, 0x00007ff3cc000000]
+ total_blobs=9442 nmethods=8952 adapters=400
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 42.703 Thread 0x00007ff3cc0ac000 11798       4       com.google.gwt.dev.js.JsInliner$NestedFunctionVisitor::<init> (5 bytes)
+Event: 42.703 Thread 0x00007ff3cc0ac000 nmethod 11798 0x00007ff3bd3d3f50 code [0x00007ff3bd3d40a0, 0x00007ff3bd3d40f8]
+Event: 42.706 Thread 0x00007ff3cc0ac000 12076 %     4       java.util.Arrays::fill @ 5 (21 bytes)
+Event: 42.708 Thread 0x00007ff3cc0b1000 12079       3       com.google.gwt.dev.util.editdistance.GeneralEditDistances$Levenshtein::getDistance (115 bytes)
+Event: 42.709 Thread 0x00007ff3cc0ac000 nmethod 12076% 0x00007ff3bd55cc90 code [0x00007ff3bd55cde0, 0x00007ff3bd55d078]
+Event: 42.709 Thread 0x00007ff3cc0b1000 nmethod 12079 0x00007ff3bdd552d0 code [0x00007ff3bdd55500, 0x00007ff3bdd56028]
+Event: 42.710 Thread 0x00007ff3cc0af000 nmethod 12074 0x00007ff3bd3a8810 code [0x00007ff3bd3a89a0, 0x00007ff3bd3a9178]
+Event: 42.710 Thread 0x00007ff3cc0af000 12078 %     4       com.google.gwt.dev.util.editdistance.CharIndex$Straight::generate @ 2 (41 bytes)
+Event: 42.711 Thread 0x00007ff3cc0ac000 12077 %     4       com.google.gwt.dev.util.editdistance.PatternBitmap::map @ 59 (149 bytes)
+Event: 42.713 Thread 0x00007ff3cc0af000 nmethod 12078% 0x00007ff3bdc71f10 code [0x00007ff3bdc72080, 0x00007ff3bdc72338]
+
+GC Heap History (10 events):
+Event: 41.987 GC heap after
+Heap after GC invocations=128 (full 41):
+ PSYoungGen      total 49664K, used 13467K [0x00000000fab00000, 0x00000000ff300000, 0x0000000100000000)
+  eden space 30208K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc880000)
+  from space 19456K, 69% used [0x00000000fc880000,0x00000000fd5a6e98,0x00000000fdb80000)
+  to   space 21504K, 0% used [0x00000000fde00000,0x00000000fde00000,0x00000000ff300000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 28975K, capacity 29674K, committed 29952K, reserved 1077248K
+  class space    used 2859K, capacity 3005K, committed 3072K, reserved 1048576K
+}
+Event: 42.097 GC heap before
+{Heap before GC invocations=129 (full 41):
+ PSYoungGen      total 49664K, used 43675K [0x00000000fab00000, 0x00000000ff300000, 0x0000000100000000)
+  eden space 30208K, 100% used [0x00000000fab00000,0x00000000fc880000,0x00000000fc880000)
+  from space 19456K, 69% used [0x00000000fc880000,0x00000000fd5a6e98,0x00000000fdb80000)
+  to   space 21504K, 0% used [0x00000000fde00000,0x00000000fde00000,0x00000000ff300000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 29023K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+Event: 42.126 GC heap after
+Heap after GC invocations=129 (full 41):
+ PSYoungGen      total 50688K, used 13696K [0x00000000fab00000, 0x00000000ff680000, 0x0000000100000000)
+  eden space 29184K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc780000)
+  from space 21504K, 63% used [0x00000000fde00000,0x00000000feb60308,0x00000000ff300000)
+  to   space 23040K, 0% used [0x00000000fc780000,0x00000000fc780000,0x00000000fde00000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 29023K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+}
+Event: 42.224 GC heap before
+{Heap before GC invocations=130 (full 41):
+ PSYoungGen      total 50688K, used 42880K [0x00000000fab00000, 0x00000000ff680000, 0x0000000100000000)
+  eden space 29184K, 100% used [0x00000000fab00000,0x00000000fc780000,0x00000000fc780000)
+  from space 21504K, 63% used [0x00000000fde00000,0x00000000feb60308,0x00000000ff300000)
+  to   space 23040K, 0% used [0x00000000fc780000,0x00000000fc780000,0x00000000fde00000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 29026K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+Event: 42.244 GC heap after
+Heap after GC invocations=130 (full 41):
+ PSYoungGen      total 52224K, used 13776K [0x00000000fab00000, 0x00000000ff880000, 0x0000000100000000)
+  eden space 29184K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc780000)
+  from space 23040K, 59% used [0x00000000fc780000,0x00000000fd4f42f8,0x00000000fde00000)
+  to   space 24576K, 0% used [0x00000000fe080000,0x00000000fe080000,0x00000000ff880000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 29026K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+}
+Event: 42.340 GC heap before
+{Heap before GC invocations=131 (full 41):
+ PSYoungGen      total 52224K, used 42960K [0x00000000fab00000, 0x00000000ff880000, 0x0000000100000000)
+  eden space 29184K, 100% used [0x00000000fab00000,0x00000000fc780000,0x00000000fc780000)
+  from space 23040K, 59% used [0x00000000fc780000,0x00000000fd4f42f8,0x00000000fde00000)
+  to   space 24576K, 0% used [0x00000000fe080000,0x00000000fe080000,0x00000000ff880000)
+ ParOldGen       total 175104K, used 110573K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfb400,0x00000000fab00000)
+ Metaspace       used 29027K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+Event: 42.360 GC heap after
+Heap after GC invocations=131 (full 41):
+ PSYoungGen      total 54272K, used 13899K [0x00000000fab00000, 0x00000000ff980000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 24576K, 56% used [0x00000000fe080000,0x00000000fee12e88,0x00000000ff880000)
+  to   space 25088K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe080000)
+ ParOldGen       total 175104K, used 110581K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfd400,0x00000000fab00000)
+ Metaspace       used 29027K, capacity 29738K, committed 29952K, reserved 1077248K
+  class space    used 2864K, capacity 3005K, committed 3072K, reserved 1048576K
+}
+Event: 42.468 GC heap before
+{Heap before GC invocations=132 (full 41):
+ PSYoungGen      total 54272K, used 43595K [0x00000000fab00000, 0x00000000ff980000, 0x0000000100000000)
+  eden space 29696K, 100% used [0x00000000fab00000,0x00000000fc800000,0x00000000fc800000)
+  from space 24576K, 56% used [0x00000000fe080000,0x00000000fee12e88,0x00000000ff880000)
+  to   space 25088K, 0% used [0x00000000fc800000,0x00000000fc800000,0x00000000fe080000)
+ ParOldGen       total 175104K, used 110581K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bfd400,0x00000000fab00000)
+ Metaspace       used 29098K, capacity 29802K, committed 29952K, reserved 1077248K
+  class space    used 2875K, capacity 3005K, committed 3072K, reserved 1048576K
+Event: 42.482 GC heap after
+Heap after GC invocations=132 (full 41):
+ PSYoungGen      total 54784K, used 14384K [0x00000000fab00000, 0x00000000ffc00000, 0x0000000100000000)
+  eden space 29696K, 0% used [0x00000000fab00000,0x00000000fab00000,0x00000000fc800000)
+  from space 25088K, 57% used [0x00000000fc800000,0x00000000fd60c2e8,0x00000000fe080000)
+  to   space 26112K, 0% used [0x00000000fe280000,0x00000000fe280000,0x00000000ffc00000)
+ ParOldGen       total 175104K, used 110589K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bff400,0x00000000fab00000)
+ Metaspace       used 29098K, capacity 29802K, committed 29952K, reserved 1077248K
+  class space    used 2875K, capacity 3005K, committed 3072K, reserved 1048576K
+}
+Event: 42.716 GC heap before
+{Heap before GC invocations=133 (full 41):
+ PSYoungGen      total 54784K, used 44080K [0x00000000fab00000, 0x00000000ffc00000, 0x0000000100000000)
+  eden space 29696K, 100% used [0x00000000fab00000,0x00000000fc800000,0x00000000fc800000)
+  from space 25088K, 57% used [0x00000000fc800000,0x00000000fd60c2e8,0x00000000fe080000)
+  to   space 26112K, 0% used [0x00000000fe280000,0x00000000fe280000,0x00000000ffc00000)
+ ParOldGen       total 175104K, used 110589K [0x00000000f0000000, 0x00000000fab00000, 0x00000000fab00000)
+  object space 175104K, 63% used [0x00000000f0000000,0x00000000f6bff400,0x00000000fab00000)
+ Metaspace       used 29280K, capacity 29962K, committed 30208K, reserved 1077248K
+  class space    used 2890K, capacity 3037K, committed 3072K, reserved 1048576K
+
+Deoptimization events (10 events):
+Event: 41.919 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=unloaded action=reinterpret pc=0x00007ff3bf048884 method=com.google.gwt.dev.js.JsInliner.hoistedExpression(Lcom/google/gwt/dev/js/ast/JsStatement;)Lcom/google/gwt/dev/js/ast/JsExpression; @ 122
+Event: 42.427 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=predicate action=maybe_recompile pc=0x00007ff3bd128ed8 method=java.util.LinkedList.indexOf(Ljava/lang/Object;)I @ 47
+Event: 42.553 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3bd925d04 method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 37
+Event: 42.553 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3bd925d04 method=java.util.regex.Pattern$CharProperty.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 37
+Event: 42.553 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3bdb5c1e4 method=java.util.regex.Pattern$Curly.match0(Ljava/util/regex/Matcher;IILjava/lang/CharSequence;)Z @ 141
+Event: 42.553 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3bdb5c1e4 method=java.util.regex.Pattern$Curly.match0(Ljava/util/regex/Matcher;IILjava/lang/CharSequence;)Z @ 141
+Event: 42.616 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3be9cbb24 method=java.util.regex.Pattern$Slice.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 75
+Event: 42.616 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3be9cbb24 method=java.util.regex.Pattern$Slice.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 75
+Event: 42.616 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3be9cbb24 method=java.util.regex.Pattern$Slice.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 75
+Event: 42.616 Thread 0x00007ff3cc2ac000 Uncommon trap: reason=bimorphic action=maybe_recompile pc=0x00007ff3be9cbb24 method=java.util.regex.Pattern$Slice.match(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Z @ 75
+
+Internal exceptions (10 events):
+Event: 42.628 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc08fb10) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.630 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc093578) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.630 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc097c68) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.631 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc09c378) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.631 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc0a0ff8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.632 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc0a47b8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.632 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc0a84b0) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.632 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc0ac300) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.633 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc0b0868) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+Event: 42.651 Thread 0x00007ff3cc2ac000 Exception <a 'java/security/PrivilegedActionException'> (0x00000000fc3682f8) thrown at [/HUDSON/workspace/8-2-build-linux-amd64/jdk8u25/1514/hotspot/src/share/vm/prims/jvm.cpp, line 1312]
+
+Events (10 events):
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT UNPACKING pc=0x00007ff3bd046f73 sp=0x00007ff3b54d4ff0 mode 0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT PACKING pc=0x00007ff3bf149915 sp=0x00007ff3b54d52f0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT UNPACKING pc=0x00007ff3bd046f73 sp=0x00007ff3b54d4ff0 mode 0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT PACKING pc=0x00007ff3bf149915 sp=0x00007ff3b54d52f0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT UNPACKING pc=0x00007ff3bd046f73 sp=0x00007ff3b54d4ff0 mode 0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT PACKING pc=0x00007ff3bf14992c sp=0x00007ff3b54d52f0
+Event: 42.710 Thread 0x00007ff3cc2ac000 DEOPT UNPACKING pc=0x00007ff3bd046f73 sp=0x00007ff3b54d4ff0 mode 0
+Event: 42.713 Thread 0x00007ff3cc2ac000 DEOPT PACKING pc=0x00007ff3bf1543db sp=0x00007ff3b54d51e0
+Event: 42.713 Thread 0x00007ff3cc2ac000 DEOPT UNPACKING pc=0x00007ff3bd046f73 sp=0x00007ff3b54d4ec8 mode 0
+Event: 42.714 Executing VM operation: ParallelGCFailedAllocation
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 28954                              /opt/electriccloud/electriccommander/jre/bin/java
+00600000-00601000 rw-p 00000000 08:01 28954                              /opt/electriccloud/electriccommander/jre/bin/java
+01e98000-01eb9000 rw-p 00000000 00:00 0                                  [heap]
+f0000000-fab00000 rw-p 00000000 00:00 0 
+fab00000-ffc00000 rw-p 00000000 00:00 0 
+100000000-100300000 rw-p 00000000 00:00 0 
+100300000-140000000 ---p 00000000 00:00 0 
+7ff370000000-7ff370046000 rw-p 00000000 00:00 0 
+7ff370046000-7ff374000000 ---p 00000000 00:00 0 
+7ff378000000-7ff378120000 rw-p 00000000 00:00 0 
+7ff378120000-7ff37c000000 ---p 00000000 00:00 0 
+7ff37c000000-7ff37c021000 rw-p 00000000 00:00 0 
+7ff37c021000-7ff380000000 ---p 00000000 00:00 0 
+7ff380000000-7ff380021000 rw-p 00000000 00:00 0 
+7ff380021000-7ff384000000 ---p 00000000 00:00 0 
+7ff384000000-7ff384021000 rw-p 00000000 00:00 0 
+7ff384021000-7ff388000000 ---p 00000000 00:00 0 
+7ff388000000-7ff38a8d6000 rw-p 00000000 00:00 0 
+7ff38a8d6000-7ff38c000000 ---p 00000000 00:00 0 
+7ff38c000000-7ff38ce53000 rw-p 00000000 00:00 0 
+7ff38ce53000-7ff390000000 ---p 00000000 00:00 0 
+7ff390000000-7ff390021000 rw-p 00000000 00:00 0 
+7ff390021000-7ff394000000 ---p 00000000 00:00 0 
+7ff394000000-7ff396aeb000 rw-p 00000000 00:00 0 
+7ff396aeb000-7ff398000000 ---p 00000000 00:00 0 
+7ff398000000-7ff398021000 rw-p 00000000 00:00 0 
+7ff398021000-7ff39c000000 ---p 00000000 00:00 0 
+7ff39c000000-7ff39c021000 rw-p 00000000 00:00 0 
+7ff39c021000-7ff3a0000000 ---p 00000000 00:00 0 
+7ff3a0000000-7ff3a0023000 rw-p 00000000 00:00 0 
+7ff3a0023000-7ff3a4000000 ---p 00000000 00:00 0 
+7ff3a4000000-7ff3a4455000 rw-p 00000000 00:00 0 
+7ff3a4455000-7ff3a8000000 ---p 00000000 00:00 0 
+7ff3a8000000-7ff3a8021000 rw-p 00000000 00:00 0 
+7ff3a8021000-7ff3ac000000 ---p 00000000 00:00 0 
+7ff3b0000000-7ff3b0028000 rw-p 00000000 00:00 0 
+7ff3b0028000-7ff3b4000000 ---p 00000000 00:00 0 
+7ff3b4fd6000-7ff3b5056000 rw-p 00000000 00:00 0 
+7ff3b5056000-7ff3b51d6000 ---p 00000000 00:00 0 
+7ff3b51d6000-7ff3b53d6000 rw-p 00000000 00:00 0 
+7ff3b53d6000-7ff3b53d9000 ---p 00000000 00:00 0 
+7ff3b53d9000-7ff3b54d7000 rw-p 00000000 00:00 0 
+7ff3b54d7000-7ff3b54da000 ---p 00000000 00:00 0 
+7ff3b54da000-7ff3b57d8000 rw-p 00000000 00:00 0 
+7ff3b57d8000-7ff3b57ee000 r-xp 00000000 08:01 29080                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnet.so
+7ff3b57ee000-7ff3b59ee000 ---p 00016000 08:01 29080                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnet.so
+7ff3b59ee000-7ff3b59ef000 rw-p 00016000 08:01 29080                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnet.so
+7ff3b59ef000-7ff3b5a00000 r-xp 00000000 08:01 29082                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnio.so
+7ff3b5a00000-7ff3b5bff000 ---p 00011000 08:01 29082                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnio.so
+7ff3b5bff000-7ff3b5c00000 rw-p 00010000 08:01 29082                      /opt/electriccloud/electriccommander/jre/lib/amd64/libnio.so
+7ff3b5c00000-7ff3b5e00000 rw-p 00000000 00:00 0 
+7ff3b5e00000-7ff3b6000000 rw-p 00000000 00:00 0 
+7ff3b6000000-7ff3b6200000 rw-p 00000000 00:00 0 
+7ff3b6200000-7ff3b6400000 rw-p 00000000 00:00 0 
+7ff3b6400000-7ff3b6600000 rw-p 00000000 00:00 0 
+7ff3b6600000-7ff3b6800000 rw-p 00000000 00:00 0 
+7ff3b6800000-7ff3b6a00000 rw-p 00000000 00:00 0 
+7ff3b6a00000-7ff3b6a07000 r-xp 00000000 08:01 29031                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt_headless.so
+7ff3b6a07000-7ff3b6c06000 ---p 00007000 08:01 29031                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt_headless.so
+7ff3b6c06000-7ff3b6c07000 rw-p 00006000 08:01 29031                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt_headless.so
+7ff3b6c07000-7ff3b6ca9000 r-xp 00000000 08:01 29030                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt.so
+7ff3b6ca9000-7ff3b6ea9000 ---p 000a2000 08:01 29030                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt.so
+7ff3b6ea9000-7ff3b6eb5000 rw-p 000a2000 08:01 29030                      /opt/electriccloud/electriccommander/jre/lib/amd64/libawt.so
+7ff3b6eb5000-7ff3b6ed9000 rw-p 00000000 00:00 0 
+7ff3b6ed9000-7ff3b6ee1000 r-xp 00000000 08:01 29078                      /opt/electriccloud/electriccommander/jre/lib/amd64/libmanagement.so
+7ff3b6ee1000-7ff3b70e1000 ---p 00008000 08:01 29078                      /opt/electriccloud/electriccommander/jre/lib/amd64/libmanagement.so
+7ff3b70e1000-7ff3b70e2000 rw-p 00008000 08:01 29078                      /opt/electriccloud/electriccommander/jre/lib/amd64/libmanagement.so
+7ff3b70e2000-7ff3b716e000 r--s 00fea000 08:01 29263                      /opt/electriccloud/electriccommander/jre/lib/ext/jfxrt.jar
+7ff3b716e000-7ff3b7171000 ---p 00000000 00:00 0 
+7ff3b7171000-7ff3b726f000 rw-p 00000000 00:00 0 
+7ff3b726f000-7ff3b7272000 ---p 00000000 00:00 0 
+7ff3b7272000-7ff3b73b8000 rw-p 00000000 00:00 0 
+7ff3b73b8000-7ff3b757b000 r--s 01df0000 08:01 32140                      /opt/electriccloud/CommanderSDK/lib/gwt-dev.jar
+7ff3b757b000-7ff3b75a3000 rw-p 00000000 00:00 0 
+7ff3b75a3000-7ff3b76a8000 r--s 01a51000 08:01 32142                      /opt/electriccloud/CommanderSDK/lib/gwt-user.jar
+7ff3b76a8000-7ff3b76aa000 r--s 00003000 08:01 33369                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/annotations.jar
+7ff3b76aa000-7ff3b76b9000 r--s 0009a000 08:01 33373                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/guice.jar
+7ff3b76b9000-7ff3b76bb000 r--s 00007000 08:01 33372                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/guice-assistedinject.jar
+7ff3b76bb000-7ff3b76bc000 r--s 00000000 08:01 33375                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/javax.inject.jar
+7ff3b76bc000-7ff3b76cc000 r--s 00087000 08:01 33374                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/gwtp-all-0.8-PATCH5.jar
+7ff3b76cc000-7ff3b76d4000 r--s 00044000 08:01 33371                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/gin-2.1.1.jar
+7ff3b76d4000-7ff3b76e3000 r--s 00096000 08:01 33370                      /opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/ec_internal.jar
+7ff3b76e3000-7ff3b7731000 r--s 0020a000 08:01 32350                      /opt/electriccloud/CommanderSDK/lib/commander-client.jar
+7ff3b7731000-7ff3b7732000 ---p 00000000 00:00 0 
+7ff3b7732000-7ff3b7832000 rw-p 00000000 00:00 0 
+7ff3b7832000-7ff3b7835000 ---p 00000000 00:00 0 
+7ff3b7835000-7ff3b7933000 rw-p 00000000 00:00 0 
+7ff3b7933000-7ff3b7936000 ---p 00000000 00:00 0 
+7ff3b7936000-7ff3b7a34000 rw-p 00000000 00:00 0 
+7ff3b7a34000-7ff3b7a37000 ---p 00000000 00:00 0 
+7ff3b7a37000-7ff3b7b35000 rw-p 00000000 00:00 0 
+7ff3b7b35000-7ff3b7b38000 ---p 00000000 00:00 0 
+7ff3b7b38000-7ff3b7c36000 rw-p 00000000 00:00 0 
+7ff3b7c36000-7ff3b7c39000 ---p 00000000 00:00 0 
+7ff3b7c39000-7ff3b7d37000 rw-p 00000000 00:00 0 
+7ff3b7d37000-7ff3b8000000 r--p 00000000 08:01 161003                     /usr/lib/locale/locale-archive
+7ff3b8000000-7ff3b8021000 rw-p 00000000 00:00 0 
+7ff3b8021000-7ff3bc000000 ---p 00000000 00:00 0 
+7ff3bc006000-7ff3bc019000 r--s 00344000 08:01 29019                      /opt/electriccloud/electriccommander/jre/lib/resources.jar
+7ff3bc019000-7ff3bc030000 r--s 00175000 08:01 29267                      /opt/electriccloud/electriccommander/jre/lib/ext/nashorn.jar
+7ff3bc030000-7ff3bc04c000 r--s 00393000 08:01 29260                      /opt/electriccloud/electriccommander/jre/lib/ext/cldrdata.jar
+7ff3bc04c000-7ff3bc04f000 ---p 00000000 00:00 0 
+7ff3bc04f000-7ff3bc14d000 rw-p 00000000 00:00 0 
+7ff3bc14d000-7ff3bc150000 ---p 00000000 00:00 0 
+7ff3bc150000-7ff3bc24e000 rw-p 00000000 00:00 0 
+7ff3bc24e000-7ff3bc24f000 ---p 00000000 00:00 0 
+7ff3bc24f000-7ff3bd000000 rw-p 00000000 00:00 0 
+7ff3bd000000-7ff3bf180000 rwxp 00000000 00:00 0 
+7ff3bf180000-7ff3cc000000 ---p 00000000 00:00 0 
+7ff3cc000000-7ff3ccf59000 rw-p 00000000 00:00 0 
+7ff3ccf59000-7ff3d0000000 ---p 00000000 00:00 0 
+7ff3d0004000-7ff3d0008000 r--s 00093000 08:01 29007                      /opt/electriccloud/electriccommander/jre/lib/jsse.jar
+7ff3d0008000-7ff3d000a000 r--s 00001000 08:01 29262                      /opt/electriccloud/electriccommander/jre/lib/ext/dnsns.jar
+7ff3d000a000-7ff3d000d000 r--s 0003a000 08:01 29271                      /opt/electriccloud/electriccommander/jre/lib/ext/sunpkcs11.jar
+7ff3d000d000-7ff3d0012000 r--s 0003f000 08:01 29270                      /opt/electriccloud/electriccommander/jre/lib/ext/sunjce_provider.jar
+7ff3d0012000-7ff3d0060000 r--s 0020a000 08:01 22411                      /opt/electriccloud/electriccommander/utils/commander-client.jar
+7ff3d0060000-7ff3d006d000 r--s 00073000 08:01 32137                      /opt/electriccloud/CommanderSDK/lib/ec-gwt.jar
+7ff3d006d000-7ff3d006e000 r--s 00000000 08:01 32143                      /opt/electriccloud/CommanderSDK/lib/jcip-annotations.jar
+7ff3d006e000-7ff3d0070000 r--s 00004000 08:01 32134                      /opt/electriccloud/CommanderSDK/lib/annotations.jar
+7ff3d0070000-7ff3d007c000 r--s 000b2000 08:01 32139                      /opt/electriccloud/CommanderSDK/lib/guava-gwt.jar
+7ff3d007c000-7ff3d00a5000 r--s 001ee000 08:01 32138                      /opt/electriccloud/CommanderSDK/lib/guava.jar
+7ff3d00a5000-7ff3d03f7000 rw-p 00000000 00:00 0 
+7ff3d03f7000-7ff3d05cd000 r--s 03caa000 08:01 29020                      /opt/electriccloud/electriccommander/jre/lib/rt.jar
+7ff3d05cd000-7ff3d1746000 rw-p 00000000 00:00 0 
+7ff3d1746000-7ff3d1747000 ---p 00000000 00:00 0 
+7ff3d1747000-7ff3d1847000 rw-p 00000000 00:00 0 
+7ff3d1847000-7ff3d1848000 ---p 00000000 00:00 0 
+7ff3d1848000-7ff3d1948000 rw-p 00000000 00:00 0 
+7ff3d1948000-7ff3d1949000 ---p 00000000 00:00 0 
+7ff3d1949000-7ff3d1a49000 rw-p 00000000 00:00 0 
+7ff3d1a49000-7ff3d1a4a000 ---p 00000000 00:00 0 
+7ff3d1a4a000-7ff3d1bd0000 rw-p 00000000 00:00 0 
+7ff3d1bd0000-7ff3d1f0a000 ---p 00000000 00:00 0 
+7ff3d1f0a000-7ff3d1f24000 r-xp 00000000 08:01 29099                      /opt/electriccloud/electriccommander/jre/lib/amd64/libzip.so
+7ff3d1f24000-7ff3d2124000 ---p 0001a000 08:01 29099                      /opt/electriccloud/electriccommander/jre/lib/amd64/libzip.so
+7ff3d2124000-7ff3d2125000 rw-p 0001a000 08:01 29099                      /opt/electriccloud/electriccommander/jre/lib/amd64/libzip.so
+7ff3d2125000-7ff3d2131000 r-xp 00000000 08:01 666277                     /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7ff3d2131000-7ff3d2330000 ---p 0000c000 08:01 666277                     /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7ff3d2330000-7ff3d2331000 r--p 0000b000 08:01 666277                     /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7ff3d2331000-7ff3d2332000 rw-p 0000c000 08:01 666277                     /lib/x86_64-linux-gnu/libnss_files-2.15.so
+7ff3d2332000-7ff3d233c000 r-xp 00000000 08:01 666281                     /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7ff3d233c000-7ff3d253c000 ---p 0000a000 08:01 666281                     /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7ff3d253c000-7ff3d253d000 r--p 0000a000 08:01 666281                     /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7ff3d253d000-7ff3d253e000 rw-p 0000b000 08:01 666281                     /lib/x86_64-linux-gnu/libnss_nis-2.15.so
+7ff3d253e000-7ff3d2555000 r-xp 00000000 08:01 666296                     /lib/x86_64-linux-gnu/libnsl-2.15.so
+7ff3d2555000-7ff3d2754000 ---p 00017000 08:01 666296                     /lib/x86_64-linux-gnu/libnsl-2.15.so
+7ff3d2754000-7ff3d2755000 r--p 00016000 08:01 666296                     /lib/x86_64-linux-gnu/libnsl-2.15.so
+7ff3d2755000-7ff3d2756000 rw-p 00017000 08:01 666296                     /lib/x86_64-linux-gnu/libnsl-2.15.so
+7ff3d2756000-7ff3d2758000 rw-p 00000000 00:00 0 
+7ff3d2758000-7ff3d2760000 r-xp 00000000 08:01 666275                     /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7ff3d2760000-7ff3d295f000 ---p 00008000 08:01 666275                     /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7ff3d295f000-7ff3d2960000 r--p 00007000 08:01 666275                     /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7ff3d2960000-7ff3d2961000 rw-p 00008000 08:01 666275                     /lib/x86_64-linux-gnu/libnss_compat-2.15.so
+7ff3d2961000-7ff3d298b000 r-xp 00000000 08:01 29052                      /opt/electriccloud/electriccommander/jre/lib/amd64/libjava.so
+7ff3d298b000-7ff3d2b8b000 ---p 0002a000 08:01 29052                      /opt/electriccloud/electriccommander/jre/lib/amd64/libjava.so
+7ff3d2b8b000-7ff3d2b8d000 rw-p 0002a000 08:01 29052                      /opt/electriccloud/electriccommander/jre/lib/amd64/libjava.so
+7ff3d2b8d000-7ff3d2b9a000 r-xp 00000000 08:01 29098                      /opt/electriccloud/electriccommander/jre/lib/amd64/libverify.so
+7ff3d2b9a000-7ff3d2d9a000 ---p 0000d000 08:01 29098                      /opt/electriccloud/electriccommander/jre/lib/amd64/libverify.so
+7ff3d2d9a000-7ff3d2d9c000 rw-p 0000d000 08:01 29098                      /opt/electriccloud/electriccommander/jre/lib/amd64/libverify.so
+7ff3d2d9c000-7ff3d2da3000 r-xp 00000000 08:01 666280                     /lib/x86_64-linux-gnu/librt-2.15.so
+7ff3d2da3000-7ff3d2fa2000 ---p 00007000 08:01 666280                     /lib/x86_64-linux-gnu/librt-2.15.so
+7ff3d2fa2000-7ff3d2fa3000 r--p 00006000 08:01 666280                     /lib/x86_64-linux-gnu/librt-2.15.so
+7ff3d2fa3000-7ff3d2fa4000 rw-p 00007000 08:01 666280                     /lib/x86_64-linux-gnu/librt-2.15.so
+7ff3d2fa4000-7ff3d309f000 r-xp 00000000 08:01 666284                     /lib/x86_64-linux-gnu/libm-2.15.so
+7ff3d309f000-7ff3d329e000 ---p 000fb000 08:01 666284                     /lib/x86_64-linux-gnu/libm-2.15.so
+7ff3d329e000-7ff3d329f000 r--p 000fa000 08:01 666284                     /lib/x86_64-linux-gnu/libm-2.15.so
+7ff3d329f000-7ff3d32a0000 rw-p 000fb000 08:01 666284                     /lib/x86_64-linux-gnu/libm-2.15.so
+7ff3d32a0000-7ff3d3f0d000 r-xp 00000000 08:01 29106                      /opt/electriccloud/electriccommander/jre/lib/amd64/server/libjvm.so
+7ff3d3f0d000-7ff3d410c000 ---p 00c6d000 08:01 29106                      /opt/electriccloud/electriccommander/jre/lib/amd64/server/libjvm.so
+7ff3d410c000-7ff3d41e2000 rw-p 00c6c000 08:01 29106                      /opt/electriccloud/electriccommander/jre/lib/amd64/server/libjvm.so
+7ff3d41e2000-7ff3d4225000 rw-p 00000000 00:00 0 
+7ff3d4225000-7ff3d43da000 r-xp 00000000 08:01 666273                     /lib/x86_64-linux-gnu/libc-2.15.so
+7ff3d43da000-7ff3d45da000 ---p 001b5000 08:01 666273                     /lib/x86_64-linux-gnu/libc-2.15.so
+7ff3d45da000-7ff3d45de000 r--p 001b5000 08:01 666273                     /lib/x86_64-linux-gnu/libc-2.15.so
+7ff3d45de000-7ff3d45e0000 rw-p 001b9000 08:01 666273                     /lib/x86_64-linux-gnu/libc-2.15.so
+7ff3d45e0000-7ff3d45e5000 rw-p 00000000 00:00 0 
+7ff3d45e5000-7ff3d45e7000 r-xp 00000000 08:01 666288                     /lib/x86_64-linux-gnu/libdl-2.15.so
+7ff3d45e7000-7ff3d47e7000 ---p 00002000 08:01 666288                     /lib/x86_64-linux-gnu/libdl-2.15.so
+7ff3d47e7000-7ff3d47e8000 r--p 00002000 08:01 666288                     /lib/x86_64-linux-gnu/libdl-2.15.so
+7ff3d47e8000-7ff3d47e9000 rw-p 00003000 08:01 666288                     /lib/x86_64-linux-gnu/libdl-2.15.so
+7ff3d47e9000-7ff3d47fe000 r-xp 00000000 08:01 29102                      /opt/electriccloud/electriccommander/jre/lib/amd64/jli/libjli.so
+7ff3d47fe000-7ff3d49fd000 ---p 00015000 08:01 29102                      /opt/electriccloud/electriccommander/jre/lib/amd64/jli/libjli.so
+7ff3d49fd000-7ff3d49fe000 rw-p 00014000 08:01 29102                      /opt/electriccloud/electriccommander/jre/lib/amd64/jli/libjli.so
+7ff3d49fe000-7ff3d4a16000 r-xp 00000000 08:01 666282                     /lib/x86_64-linux-gnu/libpthread-2.15.so
+7ff3d4a16000-7ff3d4c15000 ---p 00018000 08:01 666282                     /lib/x86_64-linux-gnu/libpthread-2.15.so
+7ff3d4c15000-7ff3d4c16000 r--p 00017000 08:01 666282                     /lib/x86_64-linux-gnu/libpthread-2.15.so
+7ff3d4c16000-7ff3d4c17000 rw-p 00018000 08:01 666282                     /lib/x86_64-linux-gnu/libpthread-2.15.so
+7ff3d4c17000-7ff3d4c1b000 rw-p 00000000 00:00 0 
+7ff3d4c1b000-7ff3d4c3d000 r-xp 00000000 08:01 666285                     /lib/x86_64-linux-gnu/ld-2.15.so
+7ff3d4c3e000-7ff3d4c3f000 rw-p 00000000 00:00 0 
+7ff3d4c3f000-7ff3d4c40000 r--s 00009000 08:01 29268                      /opt/electriccloud/electriccommander/jre/lib/ext/sunec.jar
+7ff3d4c40000-7ff3d4c41000 r--s 00010000 08:01 29272                      /opt/electriccloud/electriccommander/jre/lib/ext/zipfs.jar
+7ff3d4c41000-7ff3d4c97000 rw-p 00000000 00:00 0 
+7ff3d4c97000-7ff3d4cec000 rw-p 00000000 00:00 0 
+7ff3d4cec000-7ff3d4d15000 rw-p 00000000 00:00 0 
+7ff3d4d15000-7ff3d4d17000 ---p 00000000 00:00 0 
+7ff3d4d17000-7ff3d4d18000 rw-p 00000000 00:00 0 
+7ff3d4d18000-7ff3d4d1b000 ---p 00000000 00:00 0 
+7ff3d4d1b000-7ff3d4e1d000 rw-p 00000000 00:00 0 
+7ff3d4e1d000-7ff3d4e27000 r--s 00116000 08:01 29264                      /opt/electriccloud/electriccommander/jre/lib/ext/localedata.jar
+7ff3d4e27000-7ff3d4e29000 r--s 0000e000 08:01 32146                      /opt/electriccloud/CommanderSDK/lib/validation-api-1.0.0.GA-sources.jar
+7ff3d4e29000-7ff3d4e2c000 r--s 00009000 08:01 32145                      /opt/electriccloud/CommanderSDK/lib/validation-api-1.0.0.GA.jar
+7ff3d4e2c000-7ff3d4e31000 rw-p 00000000 00:00 0 
+7ff3d4e31000-7ff3d4e39000 rw-s 00000000 08:01 35875                      /tmp/hsperfdata_lrochette/11327
+7ff3d4e39000-7ff3d4e3a000 rw-p 00000000 00:00 0 
+7ff3d4e3a000-7ff3d4e3b000 ---p 00000000 00:00 0 
+7ff3d4e3b000-7ff3d4e3d000 rw-p 00000000 00:00 0 
+7ff3d4e3d000-7ff3d4e3e000 r--p 00022000 08:01 666285                     /lib/x86_64-linux-gnu/ld-2.15.so
+7ff3d4e3e000-7ff3d4e40000 rw-p 00023000 08:01 666285                     /lib/x86_64-linux-gnu/ld-2.15.so
+7ffff1f34000-7ffff1f55000 rw-p 00000000 00:00 0                          [stack]
+7ffff1fff000-7ffff2000000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xmx256m 
+java_command: com.google.gwt.dev.Compiler -war /home/lrochette/GitHub/EC-Zendesk/src/out/gwt-out/htdocs/war -logLevel INFO -style OBF -localWorkers 1 ecplugins.Zendesk.ConfigurationManagement
+java_class_path (initial): /opt/electriccloud/CommanderSDK/lib/commander-client.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/ec_internal.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/gin-2.1.1.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/gwtp-all-0.8-PATCH5.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/javax.inject.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/guice-assistedinject.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/guice.jar:/opt/electriccloud/electriccommander/plugins/EC-Admin-2.12.1.304/lib5/annotations.jar:/opt/electriccloud/CommanderSDK/lib/gwt-user.jar:/opt/electriccloud/CommanderSDK/lib/gwt-dev.jar:/opt/electriccloud/CommanderSDK/lib/validation-api-1.0.0.GA.jar:/opt/electriccloud/CommanderSDK/lib/validation-api-1.0.0.GA-sources.jar:/opt/electriccloud/CommanderSDK/lib/guava.jar:/opt/electriccloud/CommanderSDK/lib/guava-gwt.jar:/opt/electriccloud/CommanderSDK/lib/annotations.jar:/opt/electriccloud/CommanderSDK/lib/jcip-annotations.jar:/home/lrochette/GitHub/EC-Zendesk/src/src:/opt/electriccloud/CommanderSDK/lib/ec-gwt.jar:/opt/electriccloud/electriccommander/utils/commander-client.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/opt/electriccloud/electriccommander/jre
+PATH=/opt/electriccloud/electriccommander/bin:/opt/TEE:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/electriccloud/electriccommander/bin:/opt/electriccloud/electriccommander/bin
+SHELL=/usr/bin/tcsh
+HOSTTYPE=x86_64-linux
+OSTYPE=linux
+MACHTYPE=x86_64
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa79a80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa79a80], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x8e24e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x8e24e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x8e24e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x8e24e0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8e3d10], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8e50d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8e50d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8e50d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8e50d0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=12.04
+DISTRIB_CODENAME=precise
+DISTRIB_DESCRIPTION="Ubuntu 12.04.4 LTS"
+
+uname:Linux 3.2.0-64-generic #97-Ubuntu SMP Wed Jun 4 22:04:21 UTC 2014 x86_64
+libc:glibc 2.15 NPTL 2.15 
+rlimit: STACK 8192k, CORE infinity, NPROC 31449, NOFILE 4096, AS infinity
+load average:3.26 1.06 0.58
+
+/proc/meminfo:
+MemTotal:        4049600 kB
+MemFree:           88932 kB
+Buffers:             156 kB
+Cached:            16132 kB
+SwapCached:            0 kB
+Active:          3813936 kB
+Inactive:           6700 kB
+Active(anon):    3806368 kB
+Inactive(anon):      708 kB
+Active(file):       7568 kB
+Inactive(file):     5992 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               140 kB
+Writeback:             0 kB
+AnonPages:       3806716 kB
+Mapped:            12124 kB
+Shmem:              1280 kB
+Slab:              38972 kB
+SReclaimable:      16172 kB
+SUnreclaim:        22800 kB
+KernelStack:        5496 kB
+PageTables:        24668 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     2024800 kB
+Committed_AS:    5215716 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:       70116 kB
+VmallocChunk:   34359665392 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       67520 kB
+DirectMap2M:     4126720 kB
+
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 70 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 70
+model name	: Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+stepping	: 1
+microcode	: 0x19
+cpu MHz		: 2299.059
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 0
+cpu cores	: 4
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4598.11
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 70
+model name	: Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+stepping	: 1
+microcode	: 0x19
+cpu MHz		: 2299.059
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 1
+cpu cores	: 4
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4587.34
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 2
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 70
+model name	: Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+stepping	: 1
+microcode	: 0x19
+cpu MHz		: 2299.059
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 2
+cpu cores	: 4
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4585.34
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+processor	: 3
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 70
+model name	: Intel(R) Core(TM) i7-4850HQ CPU @ 2.30GHz
+stepping	: 1
+microcode	: 0x19
+cpu MHz		: 2299.059
+cache size	: 6144 KB
+physical id	: 0
+siblings	: 4
+core id		: 3
+cpu cores	: 4
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl pni ssse3 lahf_lm
+bogomips	: 4603.41
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 39 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 4049600k(88932k free), swap 0k(0k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.25-b02) for linux-amd64 JRE (1.8.0_25-b17), built on Sep 17 2014 17:32:11 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Fri Oct  9 14:36:36 2015
+elapsed time: 42 seconds (0d 0h 0m 42s)
+

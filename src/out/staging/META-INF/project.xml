@@ -82,17 +82,19 @@ Nikhil and Laurent won "&lt;b>Best in Show&lt;/b>" at the Citrix Synergy 2015 co
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.2.127/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.2.3.133/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-		&lt;p>Plugin Version 1.2.2.127&lt;/p>
+		&lt;p>Plugin Version 1.2.3.133&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
 interact with Zendesk.&lt;/p>
+		&lt;p>&lt;b>Note:&lt;/b> this plugin was part of the bundle who helped Laurent Rochette and Nikhil Vaze won "Best in Show" at the Citrix Synergy 2015 conference.&lt;/p>
+
 		&lt;h2>ElectricFlow Integration to Zendesk&lt;/h2>
 
 		&lt;p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.&lt;/p>
@@ -160,13 +162,6 @@ interact with Zendesk.&lt;/p>
     	plugins and is not designed to be used directly but nothing prevents 
     	you to encapsulate it in your own process if you so desire.&lt;/p>
 
-		&lt;h2>commentOnTicket&lt;/h2>
-
-    	&lt;p>This procedure is used to comment on an existing Zendesk ticket. It is called
-    	automatically by &lt;a href="/commander/pages/EC-Support/help">EC-Support&lt;/a> 
-    	plugins and is not designed to be used directly but nothing prevents 
-    	you to encapsulate it in your own process if you so desire.&lt;/p>
-
 	&lt;/div>
 &lt;/body>
 &lt;/html></value>
@@ -176,7 +171,7 @@ interact with Zendesk.&lt;/p>
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>127</value>
+        <value>133</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -261,6 +256,9 @@ if ($upgradeAction eq "upgrade") {
         <description>Version of the EC-Zendesk project
 
 History:
+-version 1.2.3
+     + removed prefix on comment
+
 - version 1.2.2
     + Fixed Help
     + Added content and image
@@ -280,7 +278,7 @@ History:
 </description>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>1.2.2</value>
+        <value>1.2.3</value>
       </property>
       <property>
         <propertyName>zendeskURL</propertyName>
@@ -378,7 +376,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.2.127</value></property></propertySheet>
+</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.2.3.133</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -677,7 +675,7 @@ my %data =(
 	ticket => {
         comment => {
 			public => "true",
-        	body => "Comment added by $[/myProject/projectName]\n\n$comment"
+        	body => "$comment"
         },
     },
 );
