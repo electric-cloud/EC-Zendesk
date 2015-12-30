@@ -83,13 +83,13 @@ Nikhil and Laurent won "&lt;b&gt;Best in Show&lt;/b&gt;" at the Citrix Synergy 2
 &lt;head&gt;
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" /&gt;
     &lt;title&gt;EC-Zendesk Plugin&lt;/title&gt;
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.3.0.136/pluginhelp.css" type="text/css" media= "screen" /&gt;
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.3.0.137/pluginhelp.css" type="text/css" media= "screen" /&gt;
 &lt;/head&gt;
 
 &lt;body&gt;
     &lt;div class="help"&gt;
         &lt;h1&gt;EC-Zendesk&lt;/h1&gt;
-		&lt;p&gt;Plugin Version 1.3.0.136&lt;/p&gt;
+		&lt;p&gt;Plugin Version 1.3.0.137&lt;/p&gt;
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" /&gt;
 
         &lt;p&gt;EC-Zendesk is a collection of procedures to help you
@@ -172,7 +172,7 @@ interact with Zendesk.&lt;/p&gt;
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>136</value>
+        <value>137</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -241,6 +241,10 @@ if ($upgradeAction eq "upgrade") {
                 procedureName =&gt; "createTicket",
                 stepName =&gt; "createTicket"
             });
+            $batch-&gt;attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName =&gt; "createTicket",
+                stepName =&gt; "checkConfiguration"
+            });
            
             $batch-&gt;attachCredential("\$[/plugins/$pluginName/project]", $cred, {
                 procedureName =&gt; "commentOnTicket",
@@ -259,6 +263,7 @@ if ($upgradeAction eq "upgrade") {
 History:
 -version 1.3.0
      + Added the 2 new fields: problemScope and problemType
+     + Check configuration
 
 -version 1.2.3
      + removed prefix on comment
@@ -292,7 +297,7 @@ History:
         <tracked>0</tracked>
         <value>https://electriccloud.zendesk.com/api/v2</value>
       </property>
-    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.3.0.136</value></property></propertySheet>
+    <property><propertyName>ec_setup</propertyName><value>PLACEHOLDER</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.3.0.137</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -1289,6 +1294,31 @@ History:
         <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
+      <step>
+        <stepName>checkConfiguration</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>PLACEHOLDER</command>
+        <condition/>
+        <description>Verify the configuration exists</description>
+        <errorHandling>abortProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <logFileName/>
+        <parallel>0</parallel>
+        <postProcessor/>
+        <precondition/>
+        <releaseMode>none</releaseMode>
+        <resourceName/>
+        <shell>ec-perl</shell>
+        <timeLimit/>
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
+        <workingDirectory/>
+        <workspaceName/>
+        <propertySheet>
+          <tracked>0</tracked>
+        </propertySheet>
+      </step>
       <step>
         <stepName>createTicket</stepName>
         <alwaysRun>0</alwaysRun>

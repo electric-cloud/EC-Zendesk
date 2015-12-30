@@ -82,13 +82,13 @@ Nikhil and Laurent won "&lt;b>Best in Show&lt;/b>" at the Citrix Synergy 2015 co
 &lt;head>
     &lt;meta content="text/html; charset=us-ascii" http-equiv="content-type" />
     &lt;title>EC-Zendesk Plugin&lt;/title>
-    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.3.0.136/pluginhelp.css" type="text/css" media= "screen" />
+    &lt;link rel="stylesheet" href= "../../plugins/EC-Zendesk-1.3.0.137/pluginhelp.css" type="text/css" media= "screen" />
 &lt;/head>
 
 &lt;body>
     &lt;div class="help">
         &lt;h1>EC-Zendesk&lt;/h1>
-		&lt;p>Plugin Version 1.3.0.136&lt;/p>
+		&lt;p>Plugin Version 1.3.0.137&lt;/p>
         &lt;hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
 
         &lt;p>EC-Zendesk is a collection of procedures to help you
@@ -171,7 +171,7 @@ interact with Zendesk.&lt;/p>
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>136</value>
+        <value>137</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -240,6 +240,10 @@ if ($upgradeAction eq "upgrade") {
                 procedureName => "createTicket",
                 stepName => "createTicket"
             });
+            $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName => "createTicket",
+                stepName => "checkConfiguration"
+            });
            
             $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
                 procedureName => "commentOnTicket",
@@ -258,6 +262,7 @@ if ($upgradeAction eq "upgrade") {
 History:
 -version 1.3.0
      + Added the 2 new fields: problemScope and problemType
+     + Check configuration
 
 -version 1.2.3
      + removed prefix on comment
@@ -353,6 +358,10 @@ if ($upgradeAction eq "upgrade") {
                 procedureName => "createTicket",
                 stepName => "createTicket"
             });
+            $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName => "createTicket",
+                stepName => "checkConfiguration"
+            });
            
             $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
                 procedureName => "commentOnTicket",
@@ -379,7 +388,7 @@ my %createTicket = (
 );
 
 @::createStepPickerSteps = (\%commentOnTicket, \%createTicket);
-</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.3.0.136</value></property></propertySheet>
+</value><expandable>0</expandable></property><property><propertyName>project_version</propertyName><value>1.3.0.137</value></property></propertySheet>
     <procedure>
       <procedureName>commentOnTicket</procedureName>
       <description>Comment on an existing  Zendesk Ticket</description>
@@ -892,7 +901,11 @@ $xpath = $ec->attachCredential($projName, $credName,
      stepName => "createTicket"});
 $errors .= $ec->checkAllErrors($xpath);
 
-## Attach credential to steps that will need it
+$xpath = $ec->attachCredential($projName, $credName,
+    {procedureName => "createTicket",
+     stepName => "checkConfiguration"});
+$errors .= $ec->checkAllErrors($xpath);
+
 $xpath = $ec->attachCredential($projName, $credName,
     {procedureName => "commentOnTicket",
      stepName => "commentOnTicket"});
@@ -1578,6 +1591,103 @@ $errors .= $ec->checkAllErrors($xpath);
         <tracked>0</tracked>
         <type>entry</type>
       </formalParameter>
+      <step>
+        <stepName>checkConfiguration</stepName>
+        <alwaysRun>0</alwaysRun>
+        <broadcast>0</broadcast>
+        <command>#############################################################################
+#
+# Copyright Electric-Cloud 2015
+#
+#############################################################################
+
+$[/plugins[EC-Admin]project/scripts/perlHeader]
+
+use ElectricCommander::PropDB;
+
+#############################################################################
+#
+# Parameters
+#
+#############################################################################
+my $ConfigName = "$[credential]";
+
+my %configuration = getConfiguration($ConfigName);
+#inject config...
+if(%configuration) {
+    if($configuration{'user'} eq '' || $configuration{'password'} eq ''){
+        print qq{Unable to retrieve data from configuration "$ConfigName".\n};
+        exit 1;
+    }
+} else {
+    print qq{Unable to find configuration "$ConfigName".\n};
+    exit 1;
+}
+
+
+
+###########################################################################
+=head2 getConfiguration
+ 
+  Title    : getConfiguration
+  Usage    : getConfiguration("Configuration name");
+  Function : get the information of the configuration given 
+  Returns  : hash containing the configuration information
+  Args     : named arguments:
+           : -configName => name of the configuration to retrieve
+           :
+=cut
+###########################################################################
+sub getConfiguration{
+
+    my $configName = shift;
+    my %configToUse;
+
+    my $pluginConfigs = new ElectricCommander::PropDB($ec,"/plugins[EC-ShareFile]project/plugin_cfgs");
+
+    my %configRow = $pluginConfigs->getRow($configName);
+
+    # Check if configuration exists
+    unless(keys(%configRow)) {
+        print "Credential $configName does not exist";
+        exit 1;
+    }
+    
+    # Get user/password out of credential
+    my $xpath = $ec->getFullCredential($configRow{credential});
+    $configToUse{'user'} = $xpath->findvalue("//userName");
+    $configToUse{'password'} = $xpath->findvalue("//password");
+
+    foreach my $c (keys %configRow) {   
+    	#getting all values except the credential that was read previously
+    	if($c ne "credential"){
+    		$configToUse{$c} = $configRow{$c};
+		}
+
+	}
+	return %configToUse;
+}
+</command>
+        <condition />
+        <description>Verify the configuration exists</description>
+        <errorHandling>abortProcedure</errorHandling>
+        <exclusiveMode>none</exclusiveMode>
+        <logFileName />
+        <parallel>0</parallel>
+        <postProcessor />
+        <precondition />
+        <releaseMode>none</releaseMode>
+        <resourceName />
+        <shell>ec-perl</shell>
+        <timeLimit />
+        <timeLimitUnits>minutes</timeLimitUnits>
+        <tracked>0</tracked>
+        <workingDirectory />
+        <workspaceName />
+        <propertySheet>
+          <tracked>0</tracked>
+        </propertySheet>
+      </step>
       <step>
         <stepName>createTicket</stepName>
         <alwaysRun>0</alwaysRun>

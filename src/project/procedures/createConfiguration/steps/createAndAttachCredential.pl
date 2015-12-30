@@ -47,7 +47,11 @@ $xpath = $ec->attachCredential($projName, $credName,
      stepName => "createTicket"});
 $errors .= $ec->checkAllErrors($xpath);
 
-## Attach credential to steps that will need it
+$xpath = $ec->attachCredential($projName, $credName,
+    {procedureName => "createTicket",
+     stepName => "checkConfiguration"});
+$errors .= $ec->checkAllErrors($xpath);
+
 $xpath = $ec->attachCredential($projName, $credName,
     {procedureName => "commentOnTicket",
      stepName => "commentOnTicket"});

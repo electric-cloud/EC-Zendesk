@@ -60,6 +60,10 @@ if ($upgradeAction eq "upgrade") {
                 procedureName => "createTicket",
                 stepName => "createTicket"
             });
+            $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
+                procedureName => "createTicket",
+                stepName => "checkConfiguration"
+            });
            
             $batch->attachCredential("\$[/plugins/$pluginName/project]", $cred, {
                 procedureName => "commentOnTicket",
