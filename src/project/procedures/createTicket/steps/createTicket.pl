@@ -14,13 +14,14 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "$[credential]";
-my $title = "$[ticketSubject]";
-my $body  = "$[ticketDescription]";
-my $URL   = "$[/myProject/zendeskURL]/tickets.json";
-my $product="$[product]";
-my $version="$[version]";
-
+my $creds   = "$[credential]";
+my $title   = "$[ticketSubject]";
+my $body    = "$[ticketDescription]";
+my $URL     = "$[/myProject/zendeskURL]/tickets.json";
+my $product = "$[product]";
+my $version = "$[version]";
+my $pbScope = "$[problemScope]";
+my $pbType  = "$[problemType]";
 #############################################################################
 #
 # Global Variables
@@ -44,6 +45,8 @@ my %data =(
                     {'id' => 108886, 'value' => $product},		# Product custome field
                     {"id" => 112789, 'value' => "email"},		# Issue initiation
                     {"id" => 109953, 'value' => $version},		# product version
+                    {"id" => 24209853, 'value' => $pbType},		# problem type
+                    {"id" => 24250276, 'value' => $pbScope},	# problem scope                  
                   ],
     },
 );
