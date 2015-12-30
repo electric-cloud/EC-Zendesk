@@ -172,7 +172,7 @@ interact with Zendesk.&lt;/p&gt;
         <counter>0</counter>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>134</value>
+        <value>135</value>
       </property>
       <property>
         <propertyName>promoteAction</propertyName>
@@ -282,7 +282,7 @@ History:
 </description>
         <expandable>1</expandable>
         <tracked>0</tracked>
-        <value>1.2.3</value>
+        <value>1.3.0</value>
       </property>
       <property>
         <propertyName>zendeskURL</propertyName>
