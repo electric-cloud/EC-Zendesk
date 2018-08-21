@@ -17,11 +17,12 @@ use MIME::Base64;
 my $creds   = "$[configuration]";
 my $title   = "$[ticketSubject]";
 my $body    = "$[ticketDescription]";
-my $URL     = "$[/myProject/zendeskURL]/tickets.json/";
+my $URL = "$[/myProject/zendeskURL]";
 my $product = "$[product]";
 my $version = "$[version]";
 my $pbScope = "$[problemScope]";
 my $pbType  = "$[problemType]";
+
 #############################################################################
 #
 # Global Variables
@@ -29,10 +30,11 @@ my $pbType  = "$[problemType]";
 #############################################################################
 # my $DEBUG=1;
 
-
 # Retrieve login and password from the credential
 my $username= $ec->getFullCredential($creds, {value => "password"})->{responses}->[0]->{credential}->{userName};
 my $password= $ec->getFullCredential($creds, {value => "userName"})->{responses}->[0]->{credential}->{password};
+
+chomp($URL);
 
 # Package the data in a data structure matching the expected JSON
 my %data =(
@@ -61,7 +63,7 @@ my $credentials = encode_base64("$username:$password");
 
 # Create a user agent and make the request
 my $ua = LWP::UserAgent->new(ssl_opts =>{ verify_hostname => 0 });
-my $response = $ua->post($URL,
+my $response = $ua->post("$URL/tickets.json",
 						 'Content' => $data,
                          'Content-Type' => 'application/json',
                          'Authorization' => "Basic $credentials");
