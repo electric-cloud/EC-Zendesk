@@ -1,0 +1,15 @@
+<plugin>
+  <key>EC-Zendesk</key>
+  <label>EC-Zendesk</label>
+  <version>1.0.0</version>
+  <author>L. Rochette</author>
+  <authorUrl>mailto:lrochette@electric-cloud.com</authorUrl>
+  <category>Administration</category>
+  <commander-version min="8.0" />
+  <description>EletricFlow integration with Zendesk</description>
+  <configure>ec_config</configure>
+  <pluginWizardBased>true</pluginWizardBased>
+  <depends min="1.4.0">EC-PluginManager</depends>
+  <depends min="3.0.0">EC-Admin</depends>
+  <help>help.xml</help>
+</plugin>

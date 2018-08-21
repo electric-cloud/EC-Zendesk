@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=us-ascii" http-equiv="content-type" />
+    <title>@PLUGIN_KEY@ Plugin</title>
+    <link rel="stylesheet" href= "../../plugins/@PLUGIN_NAME@/pluginhelp.css" type="text/css" media= "screen" />
+</head>
+
+<body>
+    <div class="help">
+        <h1>@PLUGIN_KEY@</h1>
+		<p>Plugin Version @PLUGIN_VERSION@</p>
+        <hr style="margin-left: -10px; margin-top: 10px; height: 1px; width: 100%; color: #5981BD;" noshade="noshade" />
+
+        <p>@PLUGIN_KEY@ is a collection of procedures to help you
+interact with Zendesk.</p>
+		<p><b>Note:</b> this plugin was part of the bundle who helped Laurent Rochette and Nikhil Vaze won "Best in Show" at the Citrix Synergy 2015 conference.</p>
+
+		<h2>ElectricFlow Integration to Zendesk</h2>
+
+		<p>The plugin interacts with the Zendesk REST API. It is tied at this moment with the support schema for Electric Cloud. This is not intended as a generic Zendesk connector.</p>
+
+		<h1>Plugin Procedures</h1>
+
+	    <p>
+	        IMPORTANT: For all parameter descriptions below, required
+	        parameters are shown in <span class="required">bold
+	        italics</span>.
+	    </p>
+
+	    <div id="CreateConfiguration"><a name="CreateConfiguration" id="CreateConfiguration"></a>
+
+    	<h2>Plugin Configuration</h2>
+
+        <p>
+        Plugin configurations are sets of parameters that apply
+        across some or all of the plugin's procedures. They are
+        intended to reduce repetition of common values, create
+        predefined sets of parameters for end users, and to
+        securely store credentials where needed. Each configuration
+        is given a unique name that is entered in designated
+        parameters on procedures that use them.<br />
+         Plugin configurations are created by going to the Electric
+        Commander "Administration" tab, then to the "Plugins"
+        sub-tab. On the right side of the line for the specific
+        plugin, there is a "Configure" link which will open the
+        Configuration page.
+    	</p>
+
+	    <table class="grid">
+	        <thead>
+	            <tr>
+	                <th>Parameter</th>
+
+	                <th>Description</th>
+	            </tr>
+	        </thead>
+
+	        <tbody>
+	            <tr>
+	                <td class="required">Configuration Name</td>
+	                <td>Provide a unique name for the configuration.
+	                (Required)</td>
+	            </tr>
+	            <tr>
+	                <td class="required">User Name</td>
+	                <td>Provide the user login ID. Remember that login
+	                IDs are case sensitive. (Required)</td>
+	            </tr>
+	            <tr>
+	                <td class="required">Password</td>
+	                <td>Provide the user-specified password.
+	                (Required)</td>
+	            </tr>
+	        </tbody>
+    	</table>
+    	<img src="../../plugins/Zendesk/images/help/configuration.png" alt="form" border="1"/></div>
+
+    	<h2>createTicket</h2>
+
+    	<p>This procedure is used to open a new Zendesk ticket. It is called
+    	automatically by <a href="/commander/pages/EC-Support/help">EC-Support</a>
+    	plugins and is not designed to be used directly but nothing prevents
+    	you to encapsulate it in your own process if you so desire.</p>
+
+      <h1>Release Notes</h1>
+      <h2>@PLUGIN_KEY@ 1.4.0 </h2>
+      <ul>
+          <li>Converted to PluginWizard.</li>
+      </ul>
+      <h2>@PLUGIN_KEY@ 1.3.0 </h2>
+      <ul>
+          <li>Added problemScope and problemType fields.</li>
+      </ul>
+      <h2>@PLUGIN_KEY@ 1.1.0 </h2>
+      <ul>
+          <li>Added credential configuration management.</li>
+      </ul>
+      <h2>@PLUGIN_KEY@ 1.0.0 </h2>
+      <ul>
+          <li>Initial version.</li>
+      </ul>
+
+      <h1>Contact authors</h1>
+      <ul>
+        <li>Laurent Rochette (<a href="mailto:lrochette@electric-cloud.com">lrochette@electric-cloud.com</a>)</li>
+      </ul>
+
+      <h1>Legal Jumbo</h1>
+
+      <p>This module is free for use. Modify it however you see fit to better your
+      experience using ElectricCommander. Share your enhancements and fixes.</p>
+
+      <p>This module is not officially supported by Electric Cloud. It has undergone no
+      formal testing and you may run into issues that have not been uncovered in the
+      limited manual testing done so far.</p>
+
+      <p>Electric Cloud should not be held liable for any repercussions of using this
+      software.</p>
+
+	</div>
+</body>
+</html>
