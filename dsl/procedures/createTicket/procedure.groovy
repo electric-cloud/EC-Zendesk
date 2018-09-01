@@ -36,5 +36,12 @@ procedure procName,
 
   step 'createTicket',
     command: new File(pluginDir, "dsl/procedures/$procName/steps/createTicket.pl").text,
-    shell: 'ec-perl'
+    shell: 'ec-perl',
+    condition: '$[/javascript "$[/server/EC-Zendesk/testServer]" != "true" ]'
+
+  step 'createTicket-debug',
+      command: new File(pluginDir, "dsl/procedures/$procName/steps/createTicket-debug.pl").text,
+      shell: 'ec-perl',
+      condition: '$[/javascript "$[/server/EC-Zendesk/testServer]" == "true" ]'
+
 }
