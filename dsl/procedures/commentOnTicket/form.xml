@@ -34,11 +34,11 @@
   </formElement>
 
   <formElement>
-    <type>credential</type>
-    <label>Zendesk credential:</label>
-    <property>credential</property>
+    <type>entry</type>
+    <label>Zendesk configuration:</label>
+    <property>config</property>
     <required>1</required>
-    <documentation>Name of Zendesk credential to use to log into the system.</documentation>
+    <documentation>Name of Zendesk configuration to use to log into the system.</documentation>
   </formElement>
 
 </editor>

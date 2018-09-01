@@ -1,6 +1,6 @@
 #############################################################################
 #
-# Copyright Electric-Cloud 2015
+# Copyright Electric-Cloud 2015-2018
 #
 #############################################################################
 $[/plugins[EC-Admin]project/scripts/perlHeaderJSON]
@@ -15,7 +15,7 @@ use MIME::Base64;
 # Parameters
 #
 #############################################################################
-my $creds = "$[credential]";
+my $creds = "$[config]";	# Name after the configuration
 my $comment = "$[comment]";
 my $URL   = "$[/myProject/zendeskURL]/tickets/$[ticketNumber].json";
 
@@ -27,7 +27,7 @@ my $URL   = "$[/myProject/zendeskURL]/tickets/$[ticketNumber].json";
 my $DEBUG=0;
 
 # Retrieve login and password from the credential
-my $username= $ec->getFullCredential($creds, {value => "password"})->{responses}->[0]->{credential}->{userName}; 
+my $username= $ec->getFullCredential($creds, {value => "password"})->{responses}->[0]->{credential}->{userName};
 my $password= $ec->getFullCredential($creds, {value => "userName"})->{responses}->[0]->{credential}->{password};
 
 # Package the data in a data structure matching the expected JSON
@@ -70,5 +70,3 @@ die 'http status: ' . $response->code . '  ' . $response->message
 # Decode the JSON into a Perl data structure
 my $response = decode_json($response->content);
 print Dumper($response);
-
-

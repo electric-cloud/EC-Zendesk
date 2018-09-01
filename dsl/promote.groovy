@@ -22,6 +22,10 @@ def stepsWithAttachedCredentials = [
 		 [
  			procedureName: 'createTicket',
  			stepName: 'checkConfiguration'
+ 		 ],
+		 [
+ 			procedureName: 'commentOnTicket',
+ 			stepName: 'commentOnTicket'
  		 ]
 	]
 // ** end steps with attached credentials
