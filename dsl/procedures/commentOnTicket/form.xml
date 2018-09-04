@@ -16,21 +16,20 @@
 
 -->
 <editor>
-
   <formElement>
-      <label>Ticket Number</label>
-      <property>ticketNumber</property>
-      <documentation>The zendesk ticket number on which to comment.</documentation>
-      <type>entry</type>
-      <required>1</required>
+    <label>Ticket Number</label>
+    <property>ticketNumber</property>
+    <documentation>The zendesk ticket number on which to comment.</documentation>
+    <type>entry</type>
+    <required>1</required>
   </formElement>
 
   <formElement>
-      <label>Comment</label>
-      <property>comment</property>
-      <documentation>The comment to add to your ticket.</documentation>
-      <type>textarea</type>
-      <required>1</required>
+    <label>Comment</label>
+    <property>ticketComment</property>
+    <documentation>The comment to add to your ticket.</documentation>
+    <type>textarea</type>
+    <required>1</required>
   </formElement>
 
   <formElement>

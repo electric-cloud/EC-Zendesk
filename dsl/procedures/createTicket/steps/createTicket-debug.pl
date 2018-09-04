@@ -6,7 +6,7 @@
 #############################################################################
 $[/plugins[EC-Admin]project/scripts/perlHeaderJSON]
 
-my $ticketId=120851;
+my $ticketId=$[/server/EC-Zendesk/testServer];
 
 $ec->setProperty("/myJob/zendesk/ticketId", $ticketId);
 $ec->setProperty("summary", "Zendesk ticket created: $ticketId");
