@@ -19,7 +19,7 @@
 #
 # History
 # ---------------------------------------------------------------------------
-# 2018-Aug-17 lrochette Conversion to PLuginWizard
+# 2018-Aug-17 lrochette Conversion to PluginWizard
 #
 ############################################################################ */
 import java.io.File
@@ -37,11 +37,11 @@ procedure procName,
   step 'createTicket',
     command: new File(pluginDir, "dsl/procedures/$procName/steps/createTicket.pl").text,
     shell: 'ec-perl',
-    condition: '$[/javascript "$[/server/EC-Zendesk/testServer]" == "0" ]'
+    condition: '''$[/javascript (typeof(getProperty("/server/EC-Zendesk/testServer")) == "undefined") || (server['EC-Zendesk'].testServer == "0") ]'''
 
-  step 'createTicket-debug',
+/*  step 'createTicket-debug',
       command: new File(pluginDir, "dsl/procedures/$procName/steps/createTicket-debug.pl").text,
       shell: 'ec-perl',
-      condition: '$[/javascript "$[/server/EC-Zendesk/testServer]" != "0" ]'
-
+      condition: '''$[/javascript (typeof(getProperty("/server/EC-Zendesk/testServer")) != "undefined") && (server['EC-Zendesk'].testServer != "0") ]'''
+*/
 }

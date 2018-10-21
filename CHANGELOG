@@ -1,3 +1,13 @@
+2018-10-21 Laurent Rochette <lrochette@electric-cloud.com>
+  * 1.4.2.192: Switch to requests API endpoint
+
+2018-09-27 Laurent Rochette <lrochette@electric-cloud.com>
+  * 1.4.2.170: Fix #3 change initiation field to scripted
+
+2018-09-14 Laurent Rochette <lrochette@electric-cloud.com>
+  * 1.4.1.169:
+      issue with testing server property
+      Fix #7 cannot promote on Windows
 2018-09-04 Laurent Rochette <lrochette@electric-cloud.com>
   * 1.4.0.162: Convert to PluginWizard
                Change Zendesk URL

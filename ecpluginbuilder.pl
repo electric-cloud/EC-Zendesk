@@ -14,7 +14,7 @@ my $ec = new ElectricCommander->new();
 
 my $epb="../ecpluginbuilder";
 
-my $pluginVersion = "1.4.0";
+my $pluginVersion = "1.4.2";
 my $pluginKey = "EC-Zendesk";
 
 GetOptions ("version=s" => \$pluginVersion)
@@ -71,3 +71,5 @@ $ec->installPlugin("${pluginKey}.jar");
 # Promote plugin
 print "[INFO] - Promoting plugin...\n";
 $ec->promotePlugin($pluginName);
+
+print"[INFO] - Done uploading plugin '$pluginName'\n";
