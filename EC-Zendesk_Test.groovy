@@ -12,6 +12,13 @@ project 'EC-Zendesk_Test', {
     timeLimitUnits = 'minutes'
     workspaceName = ''
 
+    step 'version',
+      shell:'ec-perl',
+      command: '''\
+         $[/plugins/EC-Admin/project/scripts/perlHeaderJSON]
+         $ec->setProperty("summary", "Zendesk: $[/plugins/EC-Zendesk/pluginVersion]")
+      '''.stripIndent()
+
     step 'createTicket', {
       description = ''
       alwaysRun = '0'
@@ -33,13 +40,13 @@ project 'EC-Zendesk_Test', {
       timeLimitUnits = 'minutes'
       workingDirectory = null
       workspaceName = ''
-      actualParameter '''configuration''', '''zendesk'''
-      actualParameter '''problemScope''', '''7_some_sites'''
-      actualParameter '''problemType''', '''4_tool_limiting'''
-      actualParameter '''product''', '''electricflow'''
-      actualParameter '''ticketDescription''', '''this is a test - Ignore'''
-      actualParameter '''ticketSubject''', '''Test'''
-      actualParameter '''version''', '''8.5'''
+      actualParameter 'configuration', 'zendesk'
+      actualParameter 'problemScope', '7_some_sites'
+      actualParameter 'problemType', '4_tool_limiting'
+      actualParameter 'product', 'electricflow'
+      actualParameter 'ticketDescription', 'this is a test - Ignore'
+      actualParameter 'ticketSubject', 'Test $[/increment /myProject/ticketCounter]'
+      actualParameter 'version', '8.5'
     }
   }
 }
